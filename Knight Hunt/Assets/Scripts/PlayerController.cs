@@ -29,7 +29,7 @@ public class PlayerController : MonoBehaviour
     {
         if(collider.IsTouchingLayers(LayerMask.GetMask("Ground")))
         {
-            rigidbody.velocity += new Vector2(x: 0, y: Input.GetAxisRaw("Fire1") * jumpHeight * multiplier * Time.deltaTime);
+            rigidbody.velocity += new Vector2(x: 0, y: Input.GetAxisRaw("Jump") * jumpHeight * multiplier * Time.deltaTime);
         }
 
         
