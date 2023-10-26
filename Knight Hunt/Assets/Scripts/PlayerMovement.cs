@@ -36,27 +36,27 @@ public class PlayerMovement : MonoBehaviour
 
     void Update()
     {
-        Run();
+        MovePlayer();
         FlipSprite();
         //ClimbLadder();
         isMoving = Mathf.Abs(rb.velocity.x) > Mathf.Epsilon;
-        isGrounded = cldr.IsTouchingLayers(LayerMask.GetMask("Ground"));
+        isGrounded = cldr.IsTouchingLayers(LayerMask.GetMask("Grass", "Gravel", "Metal", "Wood", "Tile", "Water", "Sand", "Snow", "Rock"));
     }
 
     private void OnMove(InputValue value) => moveInput = value.Get<Vector2>();
 
-    private void Run()
+    private void MovePlayer()
     {
-        rb.velocity = new Vector2(x: moveInput.x * moveSpeed * moveMultiplier * Time.deltaTime, y: rb.velocity.y);
+        rb.velocity = new(x: moveInput.x * moveSpeed * moveMultiplier * Time.deltaTime, y: rb.velocity.y);
 
-        if (isMoving)
+        /*if (isMoving)
         {
-            //animator.SetBool("isRunning", true);
+            animator.SetBool("isRunning", true);
         }
         else
         {
-            //animator.SetBool("isRunning", false);
-        }
+            animator.SetBool("isRunning", false);
+        }*/
     }
 
     void OnJump(InputValue value)
@@ -71,7 +71,7 @@ public class PlayerMovement : MonoBehaviour
 
     private void FlipSprite()
     {
-        bool horizontalSpeed = isMoving;
+        bool horizontalSpeed = Mathf.Abs(rb.velocity.x) > Mathf.Epsilon;
 
         if (horizontalSpeed)
         {
