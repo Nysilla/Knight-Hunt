@@ -21,9 +21,15 @@ public class PlayerHealth : MonoBehaviour
         }
     }
 
-    // Update is called once per frame
-    void Update()
+    private void PlayerDied()
     {
-        
+        LevelManager.instance.GameOver();
+        gameObject.SetActive(false);
+    }
+
+    // Update is called once per frame
+    void Update() 
+    {
+
     }
 }
