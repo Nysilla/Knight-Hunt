@@ -39,7 +39,7 @@ public class PlayerMovement : MonoBehaviour
         Run();
         FlipSprite();
         //ClimbLadder();
-        isMoving = Mathf.Abs(rb.velocity.x) > 0;
+        isMoving = Mathf.Abs(rb.velocity.x) > Mathf.Epsilon;
         isGrounded = cldr.IsTouchingLayers(LayerMask.GetMask("Ground"));
     }
 
@@ -49,19 +49,19 @@ public class PlayerMovement : MonoBehaviour
     {
         rb.velocity = new Vector2(x: moveInput.x * moveSpeed * moveMultiplier * Time.deltaTime, y: rb.velocity.y);
 
-        if (Mathf.Abs(rb.velocity.x) > Mathf.Epsilon)
+        if (isMoving)
         {
-            animator.SetBool("isRunning", true);
+            //animator.SetBool("isRunning", true);
         }
         else
         {
-            animator.SetBool("isRunning", false);
+            //animator.SetBool("isRunning", false);
         }
     }
 
     void OnJump(InputValue value)
     {
-        if (!cldr.IsTouchingLayers(LayerMask.GetMask("Ground"))) return;
+        if (!isGrounded) return;
 
         if (value.isPressed)
         {
@@ -71,7 +71,7 @@ public class PlayerMovement : MonoBehaviour
 
     private void FlipSprite()
     {
-        bool horizontalSpeed = Mathf.Abs(rb.velocity.x) > Mathf.Epsilon;
+        bool horizontalSpeed = isMoving;
 
         if (horizontalSpeed)
         {
