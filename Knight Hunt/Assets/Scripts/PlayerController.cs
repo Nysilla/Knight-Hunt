@@ -9,11 +9,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] float playerSpeed = 1, jumpHeight = 1, multiplier = 10;
     private Rigidbody2D rigidbody;
     private CapsuleCollider2D collider;
-    private AudioSource audioSource;
-    bool isMoving;
-    [SerializeField] AudioClip[] audioClips;
-    float audioLength;
-    int audioClip = 0;
+    [HideInInspector] public bool isMoving, isGrounded;
 
     Vector2 moveInput;
     //private KeyCode sprint = KeyCode.LeftShift;
@@ -23,41 +19,18 @@ public class PlayerController : MonoBehaviour
     {
         rigidbody = GetComponent<Rigidbody2D>();
         collider = GetComponent<CapsuleCollider2D>();
-        audioSource = GetComponent<AudioSource>();
     }
 
     private void Update()
     {
         PlayerRun();
+        isGrounded = collider.IsTouchingLayers(LayerMask.GetMask("Ground"));
+        isMoving = Mathf.Abs(rigidbody.velocity.x) > 0;
     }
 
     private void PlayerRun()
     {
         rigidbody.velocity = new Vector2(x: playerSpeed * moveInput.x * multiplier * Time.deltaTime, y: rigidbody.velocity.y);
-
-        Debug.Log(isMoving = Mathf.Abs(rigidbody.velocity.x) > 0);
-
-        if (isMoving
-            && collider.IsTouchingLayers(LayerMask.GetMask("Ground"))
-            && audioLength >= audioClips[audioClip].length
-            && audioClip != audioClips.Length)
-        {
-            PlaySFX();
-        }
-        audioLength += Time.deltaTime;
-    }
-
-    private void PlaySFX()
-    {
-        if (audioClip < audioClips.Length - 1)
-        {
-            audioClip++;
-        }
-        else
-        {
-            audioClip = 0;
-        }
-        audioSource.PlayOneShot(audioClips[audioClip]);
     }
 
     void OnMove(InputValue value)
