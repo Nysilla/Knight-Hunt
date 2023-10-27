@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class PlayerMovementSFX : MonoBehaviour
 {
-    [SerializeField] AudioClip[] grass, gravel, metal, wood, tile, sand, snow, rock, water;
+    [SerializeField] AudioClip[] grass, gravel, metal, wood, sand, snow, rock; //, water;
+    [SerializeField] float audioLength = 1;
     private AudioSource audio;
     private PlayerMovement player;
     Collider2D collider;
@@ -25,52 +26,49 @@ public class PlayerMovementSFX : MonoBehaviour
     {
         SongLength += Time.deltaTime;
 
-        if (player.isMoving 
-            && SongLength >= grass[Song].length * 0.5
-            && Song != grass.Length)
+        if (player.isMoving && SongLength >= DetermineSFX()[Song].length * (1 / audioLength) && Song != DetermineSFX().Length)
         {
-            DetermineSFX();
-
+            PlayNextSFX(DetermineSFX());
         }
     }
 
-    private void DetermineSFX()
+    private AudioClip[] DetermineSFX()
     {
         if (collider.IsTouchingLayers(LayerMask.GetMask("Grass")))
         {
-            PlayNextSFX(grass);
+            return grass;
         }
         else if (collider.IsTouchingLayers(LayerMask.GetMask("Gravel")))
         {
-            PlayNextSFX(gravel);
+            return gravel;
         }
         else if (collider.IsTouchingLayers(LayerMask.GetMask("Metal")))
         {
-            PlayNextSFX(metal);
+            return metal;
         }
         else if (collider.IsTouchingLayers(LayerMask.GetMask("Wood")))
         {
-            PlayNextSFX(wood);
-        }
-        else if (collider.IsTouchingLayers(LayerMask.GetMask("Tile")))
-        {
-            PlayNextSFX(tile);
+            return wood;
         }
         else if (collider.IsTouchingLayers(LayerMask.GetMask("Sand")))
         {
-            PlayNextSFX(sand);
+            return sand;
         }
         else if (collider.IsTouchingLayers(LayerMask.GetMask("Snow")))
         {
-            PlayNextSFX(snow);
+            return snow;
         }
-        else if (collider.IsTouchingLayers(LayerMask.GetMask("Water")))
+        /* else if (collider.IsTouchingLayers(LayerMask.GetMask("Water")))
         {
-            PlayNextSFX(water);
-        }
+            return water;
+        } */
         else if (collider.IsTouchingLayers(LayerMask.GetMask("Rock")))
         {
-            PlayNextSFX(rock);
+            return rock;
+        }
+        else
+        {
+            return null;
         }
     }
 

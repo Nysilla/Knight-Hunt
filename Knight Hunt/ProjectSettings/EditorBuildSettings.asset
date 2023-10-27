@@ -8,5 +8,11 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Main Scenes/stage 1.unity
     guid: 2cda990e2423bbf4892e6590ba056729
+  - enabled: 1
+    path: Assets/Scenes/Main Scenes/Main Menu.unity
+    guid: 0cbb6f5b9a82db24cba3eedd39fbf9b0
+  - enabled: 1
+    path: Assets/Scenes/Sandboxes/sand box 4.unity
+    guid: 05535b10adbb45b41ad89c535451ecda
   m_configObjects:
     com.unity.input.settings: {fileID: 11400000, guid: 44bf3dba9989b004ca05db52f1fc7a6e, type: 2}

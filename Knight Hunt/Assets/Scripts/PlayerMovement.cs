@@ -40,7 +40,7 @@ public class PlayerMovement : MonoBehaviour
         FlipSprite();
         //ClimbLadder();
         isMoving = Mathf.Abs(rb.velocity.x) > Mathf.Epsilon;
-        isGrounded = cldr.IsTouchingLayers(LayerMask.GetMask("Grass", "Gravel", "Metal", "Wood", "Tile", "Water", "Sand", "Snow", "Rock"));
+        isGrounded = cldr.IsTouchingLayers(LayerMask.GetMask("Grass", "Gravel", "Metal", "Wood", /*"Water", */"Sand", "Snow", "Rock"));
     }
 
     private void OnMove(InputValue value) => moveInput = value.Get<Vector2>();
