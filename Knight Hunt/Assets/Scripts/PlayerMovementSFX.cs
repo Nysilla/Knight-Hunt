@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class PlayerMovementSFX : MonoBehaviour
 {
-    [SerializeField] AudioClip[] grass, gravel, metal, wood, sand, snow, rock; //, water;
+    [SerializeField] AudioClip[] grass, gravel, metal, wood, sand, snow, rock /*, water*/ ;
     [SerializeField] float audioLength = 1;
     private AudioSource audio;
     private PlayerMovement player;
