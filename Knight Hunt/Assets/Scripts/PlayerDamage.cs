@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -14,13 +15,14 @@ public class PlayerDamage : MonoBehaviour
     {
         timer += Time.deltaTime;
 
-        Vector3 enemyPosition = GameObject.FindWithTag("Enemy").transform.position - transform.position;
-        playerCloseToEnemy = enemyPosition.magnitude < distance;
+        Vector3 enemyPosition = GameObject.FindWithTag("Player").transform.position - transform.position;
 
-        if (playerCloseToEnemy && Input.GetKeyDown(KeyCode.Mouse0) && timer >= damageDelay)
+        if (enemyPosition.magnitude < distance && Input.GetKeyDown(KeyCode.Mouse0) && timer >= damageDelay)
         {
             GameObject.FindWithTag("Enemy").GetComponent<EnemyHealth>().TakeDamage(damageAmount);
             timer = 0;
+            //play attack sfx
+
         }
     }
 }
