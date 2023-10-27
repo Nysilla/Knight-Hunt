@@ -15,7 +15,9 @@ public class Projectile : MonoBehaviour
     {
         projectileCount = projectileLife;
         playerMovement = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerMovement>();
-        facingright = playerMovement.playerHasHorizontalSpeed;
+        //facingright = playerMovement.playerHasHorizontalSpeed;
+        facingright = GameObject.FindWithTag("Player").GetComponent<Rigidbody2D>().velocity.x > 0;
+
         if (!facingright)
         { 
             transform.rotation = Quaternion.Euler(0, 0, 0);
