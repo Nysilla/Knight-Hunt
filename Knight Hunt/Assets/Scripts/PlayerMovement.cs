@@ -22,7 +22,7 @@ public class PlayerMovement : MonoBehaviour
     Rigidbody2D rb;
     Animator animator;
     Collider2D cldr;
-    [HideInInspector] public bool isMoving, isGrounded;
+    [HideInInspector] public bool isMoving, isGrounded, playerHasHorizontalSpeed;
 
 
     void Start()
@@ -40,7 +40,7 @@ public class PlayerMovement : MonoBehaviour
         FlipSprite();
         //ClimbLadder();
         isMoving = Mathf.Abs(rb.velocity.x) > Mathf.Epsilon;
-        isGrounded = cldr.IsTouchingLayers(LayerMask.GetMask("Grass", "Gravel", "Metal", "Wood", /*"Water", */"Sand", "Snow", "Rock"));
+        isGrounded = cldr.IsTouchingLayers(LayerMask.GetMask("Grass", "Gravel", "Metal", "Wood", /*"Water", */ "Sand", "Snow", "Rock"));
     }
 
     private void OnMove(InputValue value) => moveInput = value.Get<Vector2>();
@@ -59,7 +59,7 @@ public class PlayerMovement : MonoBehaviour
         }*/
     }
 
-    void OnJump(InputValue value)
+    private void OnJump(InputValue value)
     {
         if (!isGrounded) return;
 
@@ -71,9 +71,9 @@ public class PlayerMovement : MonoBehaviour
 
     private void FlipSprite()
     {
-        bool horizontalSpeed = Mathf.Abs(rb.velocity.x) > Mathf.Epsilon;
+        playerHasHorizontalSpeed = Mathf.Abs(rb.velocity.x) > Mathf.Epsilon;
 
-        if (horizontalSpeed)
+        if (playerHasHorizontalSpeed)
         {
             transform.localScale = new Vector2(Mathf.Sign(rb.velocity.x), 1);
         }
