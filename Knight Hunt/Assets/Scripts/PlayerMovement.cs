@@ -25,7 +25,7 @@ public class PlayerMovement : MonoBehaviour
     [HideInInspector] public bool isMoving, isGrounded, playerHasHorizontalSpeed;
 
 
-    void Start()
+    private void Start()
     {
         rb = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
@@ -33,8 +33,7 @@ public class PlayerMovement : MonoBehaviour
         //startGravity = rb.gravityScale;
     }
 
-
-    void Update()
+    private void FixedUpdate()
     {
         MovePlayer();
         FlipSprite();
