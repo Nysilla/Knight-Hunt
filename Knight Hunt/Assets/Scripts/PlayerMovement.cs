@@ -20,21 +20,20 @@ public class PlayerMovement : MonoBehaviour
     //float startGravity;
     Vector2 moveInput;
     Rigidbody2D rb;
-    Animator animator;
+    //Animator animator;
     Collider2D cldr;
     [HideInInspector] public bool isMoving, isGrounded, playerHasHorizontalSpeed;
 
 
-    void Start()
+    private void Start()
     {
         rb = GetComponent<Rigidbody2D>();
-        animator = GetComponent<Animator>();
+        //animator = GetComponent<Animator>();
         cldr = GetComponent<Collider2D>();
         //startGravity = rb.gravityScale;
     }
 
-
-    void Update()
+    private void FixedUpdate()
     {
         MovePlayer();
         FlipSprite();
