@@ -20,7 +20,7 @@ public class PlayerMovement : MonoBehaviour
     //float startGravity;
     Vector2 moveInput;
     Rigidbody2D rb;
-    //Animator animator;
+    Animator animator;
     Collider2D cldr;
     [HideInInspector] public bool isMoving, isGrounded, playerHasHorizontalSpeed;
 
@@ -28,7 +28,7 @@ public class PlayerMovement : MonoBehaviour
     private void Start()
     {
         rb = GetComponent<Rigidbody2D>();
-        //animator = GetComponent<Animator>();
+        animator = GetComponent<Animator>();
         cldr = GetComponent<Collider2D>();
         //startGravity = rb.gravityScale;
     }
@@ -48,14 +48,14 @@ public class PlayerMovement : MonoBehaviour
     {
         rb.velocity = new(x: moveInput.x * moveSpeed * moveMultiplier * Time.deltaTime, y: rb.velocity.y);
 
-        /*if (isMoving)
+        if (isMoving)
         {
-            animator.SetBool("isRunning", true);
+            animator.SetBool("isMoving", true);
         }
         else
         {
-            animator.SetBool("isRunning", false);
-        }*/
+            animator.SetBool("isMoving", false);
+        }
     }
 
     private void OnJump(InputValue value)
