@@ -15,7 +15,7 @@ public class PlayerDamage : MonoBehaviour
     {
         timer += Time.deltaTime;
 
-        Vector3 enemyPosition = GameObject.FindWithTag("Player").transform.position - transform.position;
+        Vector3 enemyPosition = GameObject.FindWithTag("Enemy").transform.position - transform.position;
 
         if (enemyPosition.magnitude < distance && Input.GetKeyDown(KeyCode.Mouse0) && timer >= damageDelay)
         {
