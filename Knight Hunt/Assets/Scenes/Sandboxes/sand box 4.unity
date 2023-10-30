@@ -1455,7 +1455,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   distance: 3
-  damageDelay: 1
+  damageDelay: 0.5
   damageAmount: 10
   playerCloseToEnemy: 0
 --- !u!1 &1236706724
@@ -2073,6 +2073,7 @@ GameObject:
   - component: {fileID: 1511580413}
   - component: {fileID: 1511580412}
   - component: {fileID: 1511580411}
+  - component: {fileID: 1511580415}
   m_Layer: 0
   m_Name: Capsule
   m_TagString: Enemy
@@ -2184,6 +2185,20 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1511580415
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1511580409}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cbe8aa266045eed4a98522d18e7cb4ec, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHealth: 100
+  currentHealth: 0
 --- !u!1 &1659445523
 GameObject:
   m_ObjectHideFlags: 3

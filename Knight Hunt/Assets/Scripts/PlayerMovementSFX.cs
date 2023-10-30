@@ -26,6 +26,11 @@ public class PlayerMovementSFX : MonoBehaviour
     {
         SongLength += Time.deltaTime;
 
+        if(!player.isGrounded)
+        {
+            return;
+        }
+
         if (player.isMoving && SongLength >= DetermineSFX()[Song].length * (1 / audioLength) && Song != DetermineSFX().Length)
         {
             PlayNextSFX(DetermineSFX());
