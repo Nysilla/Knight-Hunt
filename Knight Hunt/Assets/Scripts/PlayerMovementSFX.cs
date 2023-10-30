@@ -5,10 +5,10 @@ using UnityEngine;
 public class PlayerMovementSFX : MonoBehaviour
 {
     [SerializeField] AudioClip[] grass, gravel, metal, wood, sand, snow, rock /*, water*/ ;
-    [SerializeField] float audioLength = 1;
+    [SerializeField] private float audioLength = 1;
     private AudioSource audio;
     private PlayerMovement player;
-    Collider2D collider;
+    private Collider2D collider;
 
     public int Song { get; set; } = 0;
     public float SongLength { get; set; }
