@@ -9,6 +9,15 @@ public class PlayerHealth : MonoBehaviour
     [SerializeField] private float healDelay;
     [SerializeField] private TextMeshProUGUI healthText;
     private float healTimer;
+
+    //test
+    [Header("Test")]
+    [SerializeField] private float damageDelay = 1; 
+    [SerializeField] private bool shouldDamagePlayer;
+
+    private float timer;
+    //
+
     // Start is called before the first frame update
     void Start()
     {
@@ -16,33 +25,45 @@ public class PlayerHealth : MonoBehaviour
         healthText.text = "Health: " + health;
     }
 
-    public void TakeDamage(int amount)
+    public void TakeDamage(int health)
     {
-        if (health > 0)
+        if (this.health > 0)
         {
-            health -= amount;
-            healthText.text = "Health: " + health;
+            this.health -= health;
+            healthText.text = "Health: " + this.health;
         }
 
-        if (health <= 0)
+        if (this.health <= 0)
         {
-            Destroy(gameObject);
+            SetHealth(0);
+
+            /*alternative
+            gameObject.SetActive(false);
+            */
+
+            PlayerDied();
         }
     }
 
-    public void Heal(int amount)
+    public void Heal(int health)
     {
-        if (health < maxHealth)
+        if (this.health < maxHealth)
         {
-            health += amount;
-            healthText.text = "Health: " + health;
+            this.health += health;
+            healthText.text = "Health: " + this.health;
         }
 
-        if (health > maxHealth)
+        if (this.health > maxHealth)
         {
-            health = maxHealth;
-            healthText.text = "Health: " + health;
+            this.health = maxHealth;
+            healthText.text = "Health: " + this.health;
         }
+    }
+
+    public void SetHealth(int health)
+    {
+        this.health = health;
+        healthText.text = "Health: " + this.health;
     }
 
     private void PlayerDied()
@@ -52,12 +73,24 @@ public class PlayerHealth : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update() 
+    void Update()
     {
         //test
-        if (Input.GetKeyDown(KeyCode.Q) && healTimer != healDelay)
+        timer += Time.deltaTime;
+
+        if (shouldDamagePlayer && timer >= damageDelay)
+        {
+            TakeDamage(15);
+            timer = 0;
+        }
+        //
+
+        healTimer += Time.deltaTime;
+
+        if (Input.GetKeyDown(KeyCode.Q) && healTimer >= healDelay)
         {
             Heal(10);
+            healTimer = 0;
         }
     }
 }
