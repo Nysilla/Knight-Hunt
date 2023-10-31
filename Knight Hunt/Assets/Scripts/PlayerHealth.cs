@@ -8,6 +8,8 @@ public class PlayerHealth : MonoBehaviour
     public int maxHealth = 100;
     [SerializeField] private float healDelay;
     [SerializeField] private TextMeshProUGUI healthText;
+    [SerializeField] private AudioClip healSFX;
+    private AudioSource audioSource;
     private float healTimer;
 
     //test
@@ -23,6 +25,7 @@ public class PlayerHealth : MonoBehaviour
     {
         health = maxHealth;
         healthText.text = "Health: " + health;
+        audioSource = GetComponent<AudioSource>();
     }
 
     public void TakeDamage(int health)
@@ -49,6 +52,7 @@ public class PlayerHealth : MonoBehaviour
     {
         if (this.health < maxHealth)
         {
+            audioSource.PlayOneShot(healSFX);
             this.health += health;
             healthText.text = "Health: " + this.health;
         }
