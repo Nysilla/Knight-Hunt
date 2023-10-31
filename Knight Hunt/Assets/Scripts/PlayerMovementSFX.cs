@@ -26,7 +26,7 @@ public class PlayerMovementSFX : MonoBehaviour
     {
         SongLength += Time.deltaTime;
 
-        if(!player.isGrounded)
+        if (!player.isGrounded)
         {
             return;
         }
