@@ -8,6 +8,7 @@ public class PlayerMovement : MonoBehaviour
     [Header("Movement")]
     [SerializeField] float moveSpeed;
     [SerializeField] float moveMultiplier;
+    public bool canMove = true;
 
     [Header("Jumping")]
     [SerializeField] float jumpSpeed;
@@ -17,6 +18,7 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] float climbMultiplier; */
 
     //Internal Variables
+
     //float startGravity;
     Vector2 moveInput;
     Rigidbody2D rb;
@@ -46,7 +48,11 @@ public class PlayerMovement : MonoBehaviour
 
     private void MovePlayer()
     {
-        rb.velocity = new(x: moveInput.x * moveSpeed * moveMultiplier * Time.deltaTime, y: rb.velocity.y);
+        if (canMove)
+        {
+            Vector2 movePlayer = new(x: moveInput.x * moveSpeed * moveMultiplier * Time.deltaTime, y: rb.velocity.y);
+            rb.velocity = movePlayer;
+        }
 
         if (isMoving)
         {
