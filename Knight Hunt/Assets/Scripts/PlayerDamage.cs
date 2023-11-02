@@ -7,15 +7,15 @@ public class PlayerDamage : MonoBehaviour
 {
     [SerializeField] float distance = 3, damageDelay = 1;
     [SerializeField] int damageAmount;
-
-    [Header("SFX")]
     [SerializeField] private AudioClip[] damageSFX;
-    [SerializeField] private AudioClip[] attackSFX;
     //[SerializeField] private float audioLength = 1;
 
     //Internal Variables
     private BoxCollider2D frontOfPlayer;
+    private GameObject enemy;
     private AudioSource audioSource;
+    private CapsuleCollider2D capsule;
+    [HideInInspector] public bool isAttacking; 
     float timer;
     //[HideInInspector] public bool playerCloseToEnemy;
 
@@ -26,6 +26,9 @@ public class PlayerDamage : MonoBehaviour
     {
         audioSource = GetComponent<AudioSource>();
         frontOfPlayer = GetComponent<BoxCollider2D>();
+        //enemy = GameObject.FindGameObjectsWithTag("Enemy");
+        capsule = GetComponent<CapsuleCollider2D>();
+        enemy = GameObject.FindWithTag("Enemy");
     }
 
     // Update is called once per frame
@@ -33,9 +36,7 @@ public class PlayerDamage : MonoBehaviour
     {
         timer += Time.deltaTime;
 
-        bool isAttacking = Input.GetKeyDown(KeyCode.Mouse0) && timer >= damageDelay;
-
-        GameObject enemy = GameObject.FindWithTag("Enemy");
+        isAttacking = Input.GetKeyDown(KeyCode.Mouse0) && timer >= damageDelay;
 
         if (!enemy)
         {
@@ -46,19 +47,20 @@ public class PlayerDamage : MonoBehaviour
 
         if (isAttacking)
         {
-            bool closeToEnemy = enemyPosition.magnitude < distance;
+            //bool closeToEnemy = enemyPosition.magnitude < distance;
 
-            if (closeToEnemy && frontOfPlayer.IsTouchingLayers(LayerMask.GetMask("Enemy")))
+            bool playerFacingEnemy = frontOfPlayer.IsTouchingLayers(LayerMask.GetMask("Enemy"));
+
+            if (/*closeToEnemy && */ playerFacingEnemy)
             {
                 enemy.GetComponent<EnemyHealth>().TakeDamage(damageAmount);
                 PlaySFX(damageSFX);
+                timer = 0;
             }
-            PlaySFX(attackSFX);
-            timer = 0;
         }
     }
 
-    private void PlaySFX(AudioClip[] audioClips)
+    public void PlaySFX(AudioClip[] audioClips)
     {
         if (Song != audioClips.Length)
         {
