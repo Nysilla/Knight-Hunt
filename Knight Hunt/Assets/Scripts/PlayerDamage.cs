@@ -11,11 +11,13 @@ public class PlayerDamage : MonoBehaviour
     [Header("SFX")]
     [SerializeField] private AudioClip[] damageSFX;
     [SerializeField] private AudioClip[] attackSFX;
-    [SerializeField] private float audioLength = 1;
+    //[SerializeField] private float audioLength = 1;
 
+    //Internal Variables
+    private BoxCollider2D frontOfPlayer;
     private AudioSource audioSource;
     float timer;
-    [HideInInspector] public bool playerCloseToEnemy;
+    //[HideInInspector] public bool playerCloseToEnemy;
 
     public int Song { get; set; } = 0;
     //public float SongLength { get; set; }
@@ -23,6 +25,7 @@ public class PlayerDamage : MonoBehaviour
     private void Start()
     {
         audioSource = GetComponent<AudioSource>();
+        frontOfPlayer = GetComponent<BoxCollider2D>();
     }
 
     // Update is called once per frame
@@ -32,24 +35,26 @@ public class PlayerDamage : MonoBehaviour
 
         bool isAttacking = Input.GetKeyDown(KeyCode.Mouse0) && timer >= damageDelay;
 
-        if (isAttacking)
-        {
-            PlaySFX(attackSFX);
-            timer = 0;
-        }
+        GameObject enemy = GameObject.FindWithTag("Enemy");
 
-        if (!GameObject.FindWithTag("Enemy"))
+        if (!enemy)
         {
             return;
         }
 
-        Vector3 enemyPosition = GameObject.FindWithTag("Enemy").transform.position - transform.position;
+        Vector3 enemyPosition = enemy.transform.position - transform.position;
 
-        if (enemyPosition.magnitude < distance && isAttacking)
+        if (isAttacking)
         {
-            GameObject.FindWithTag("Enemy").GetComponent<EnemyHealth>().TakeDamage(damageAmount);
+            bool closeToEnemy = enemyPosition.magnitude < distance;
+
+            if (closeToEnemy && frontOfPlayer.IsTouchingLayers(LayerMask.GetMask("Enemy")))
+            {
+                enemy.GetComponent<EnemyHealth>().TakeDamage(damageAmount);
+                PlaySFX(damageSFX);
+            }
+            PlaySFX(attackSFX);
             timer = 0;
-            PlaySFX(damageSFX);
         }
     }
 

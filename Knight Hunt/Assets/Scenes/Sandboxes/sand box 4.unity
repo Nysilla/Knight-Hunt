@@ -1557,6 +1557,7 @@ GameObject:
   - component: {fileID: 1033418946}
   - component: {fileID: 1033418947}
   - component: {fileID: 1033418948}
+  - component: {fileID: 1033418949}
   m_Layer: 7
   m_Name: Player
   m_TagString: Untagged
@@ -1924,8 +1925,6 @@ MonoBehaviour:
   attackSFX:
   - {fileID: 8300000, guid: 80502e18f68bb734b9dded7bb8d2e750, type: 3}
   - {fileID: 8300000, guid: ef18a5a7071e4a54ba749b93057e0864, type: 3}
-  audioLength: 0.5
-  playerCloseToEnemy: 0
 --- !u!95 &1033418946
 Animator:
   serializedVersion: 5
@@ -2061,6 +2060,32 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!61 &1033418949
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1033418935}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0.74, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 1.03125, y: 2.09375}
+    newSize: {x: 1, y: 2}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 0.92, y: 2.09375}
+  m_EdgeRadius: 0
 --- !u!1 &1058336631
 GameObject:
   m_ObjectHideFlags: 0
@@ -2889,7 +2914,7 @@ GameObject:
   - component: {fileID: 1511580411}
   - component: {fileID: 1511580415}
   - component: {fileID: 1511580416}
-  m_Layer: 0
+  m_Layer: 16
   m_Name: Capsule
   m_TagString: Enemy
   m_Icon: {fileID: 0}
