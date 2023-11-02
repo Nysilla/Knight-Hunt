@@ -1918,10 +1918,13 @@ MonoBehaviour:
   distance: 3
   damageDelay: 0.5
   damageAmount: 10
+  damageSFX:
+  - {fileID: 8300000, guid: 7cbd6cd765888ff418d01d98bd1ce9c2, type: 3}
+  - {fileID: 8300000, guid: 3df9bbbc130ccb344af5f3fc793a630f, type: 3}
   attackSFX:
   - {fileID: 8300000, guid: 80502e18f68bb734b9dded7bb8d2e750, type: 3}
   - {fileID: 8300000, guid: ef18a5a7071e4a54ba749b93057e0864, type: 3}
-  audioLength: 1
+  audioLength: 0.5
   playerCloseToEnemy: 0
 --- !u!95 &1033418946
 Animator:
@@ -1959,7 +1962,7 @@ MonoBehaviour:
   maxHealth: 100
   healDelay: 2
   healthText: {fileID: 1380002785}
-  healSFX: {fileID: 8300000, guid: 397f887ca5a702240b4c9338fe65fb9c, type: 3}
+  healSFX: {fileID: 0}
   damageDelay: 2
   shouldDamagePlayer: 1
 --- !u!82 &1033418948

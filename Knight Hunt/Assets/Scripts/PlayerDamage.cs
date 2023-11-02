@@ -8,7 +8,8 @@ public class PlayerDamage : MonoBehaviour
     [SerializeField] float distance = 3, damageDelay = 1;
     [SerializeField] int damageAmount;
 
-    [Header("Attack SFX")]
+    [Header("SFX")]
+    [SerializeField] private AudioClip[] damageSFX;
     [SerializeField] private AudioClip[] attackSFX;
     [SerializeField] private float audioLength = 1;
 
@@ -29,6 +30,14 @@ public class PlayerDamage : MonoBehaviour
     {
         timer += Time.deltaTime;
 
+        bool isAttacking = Input.GetKeyDown(KeyCode.Mouse0) && timer >= damageDelay;
+
+        if (isAttacking)
+        {
+            PlaySFX(attackSFX);
+            timer = 0;
+        }
+
         if (!GameObject.FindWithTag("Enemy"))
         {
             return;
@@ -36,15 +45,19 @@ public class PlayerDamage : MonoBehaviour
 
         Vector3 enemyPosition = GameObject.FindWithTag("Enemy").transform.position - transform.position;
 
-        if (enemyPosition.magnitude < distance && Input.GetKeyDown(KeyCode.Mouse0) && timer >= damageDelay)
+        if (enemyPosition.magnitude < distance && isAttacking)
         {
             GameObject.FindWithTag("Enemy").GetComponent<EnemyHealth>().TakeDamage(damageAmount);
             timer = 0;
+            PlaySFX(damageSFX);
+        }
+    }
 
-            if (Song != attackSFX.Length)
-            {
-                PlayNextSFX(attackSFX);
-            }
+    private void PlaySFX(AudioClip[] audioClips)
+    {
+        if (Song != audioClips.Length)
+        {
+            PlayNextSFX(audioClips);
         }
     }
 
