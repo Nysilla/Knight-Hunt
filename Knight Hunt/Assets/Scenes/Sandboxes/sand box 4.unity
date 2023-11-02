@@ -1557,6 +1557,7 @@ GameObject:
   - component: {fileID: 1033418946}
   - component: {fileID: 1033418947}
   - component: {fileID: 1033418948}
+  - component: {fileID: 1033418949}
   m_Layer: 7
   m_Name: Player
   m_TagString: Untagged
@@ -1808,15 +1809,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   grass:
   - {fileID: 8300000, guid: 56ea356e65429294f9098ef523fdb70b, type: 3}
-  - {fileID: 8300000, guid: 5799109e817d3704889f0499d06a23be, type: 3}
-  - {fileID: 8300000, guid: d3f3cc8ad058cad408e97b1875afec82, type: 3}
-  - {fileID: 8300000, guid: ed546d9af9b4e884cbe8d8047fa8c80a, type: 3}
-  - {fileID: 8300000, guid: f3a60c89c8456614895e7e11520a19d5, type: 3}
-  - {fileID: 8300000, guid: e4f1c11a5b7fd27468ea8b131669f3a5, type: 3}
-  - {fileID: 8300000, guid: 326f222e206f8d84bbced6f9d6a0f08e, type: 3}
-  - {fileID: 8300000, guid: fbb8ee09f6d45f54d84383b81ca5a5cd, type: 3}
-  - {fileID: 8300000, guid: 3fb042d8273dfd141955633820660a4f, type: 3}
-  - {fileID: 8300000, guid: eb73ae3e299f426418476df5f1fb0f53, type: 3}
+  - {fileID: 8300000, guid: 161d5a427e88d594f9906708ccdc5663, type: 3}
+  - {fileID: 8300000, guid: 7a5ff4a806216b14ab9dba35a4fb258c, type: 3}
+  - {fileID: 8300000, guid: bd5653e52c4636e4aa3b0ced8f49a18d, type: 3}
+  - {fileID: 8300000, guid: 6c8508d96905ea749ae50b49916fde55, type: 3}
+  - {fileID: 8300000, guid: 35bda0c39b1fbe64196a669bfb99757d, type: 3}
+  - {fileID: 8300000, guid: 6259119f201fafa4ca80646eff6b4b1f, type: 3}
+  - {fileID: 8300000, guid: b04914b5801123b4dafba88cbcb5bc74, type: 3}
+  - {fileID: 8300000, guid: 3ec9ef3892d02044a9d62e412eb45ffb, type: 3}
+  - {fileID: 8300000, guid: dffb2ef44d2dd254aa89c2546475cf3c, type: 3}
   gravel:
   - {fileID: 8300000, guid: 44737e645aa918043b3d8cab5d1511bc, type: 3}
   - {fileID: 8300000, guid: 302595b93370c52408825d7fb07d09be, type: 3}
@@ -1883,7 +1884,7 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 82354d1fee336984994fbdcc8154c89c, type: 3}
   - {fileID: 8300000, guid: 068414160a0ccf34ca0c11b55d43ffc8, type: 3}
   - {fileID: 8300000, guid: 02d4b2dff380d194fab91c0864b0c386, type: 3}
-  audioLength: 1.5
+  audioLength: 1.2
 --- !u!114 &1033418944
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1918,11 +1919,12 @@ MonoBehaviour:
   distance: 3
   damageDelay: 0.5
   damageAmount: 10
+  damageSFX:
+  - {fileID: 8300000, guid: 7cbd6cd765888ff418d01d98bd1ce9c2, type: 3}
+  - {fileID: 8300000, guid: 3df9bbbc130ccb344af5f3fc793a630f, type: 3}
   attackSFX:
   - {fileID: 8300000, guid: 80502e18f68bb734b9dded7bb8d2e750, type: 3}
   - {fileID: 8300000, guid: ef18a5a7071e4a54ba749b93057e0864, type: 3}
-  audioLength: 1
-  playerCloseToEnemy: 0
 --- !u!95 &1033418946
 Animator:
   serializedVersion: 5
@@ -1959,7 +1961,7 @@ MonoBehaviour:
   maxHealth: 100
   healDelay: 2
   healthText: {fileID: 1380002785}
-  healSFX: {fileID: 8300000, guid: 397f887ca5a702240b4c9338fe65fb9c, type: 3}
+  healSFX: {fileID: 0}
   damageDelay: 2
   shouldDamagePlayer: 1
 --- !u!82 &1033418948
@@ -2058,6 +2060,32 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!61 &1033418949
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1033418935}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0.74, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 1.03125, y: 2.09375}
+    newSize: {x: 1, y: 2}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 0.92, y: 2.09375}
+  m_EdgeRadius: 0
 --- !u!1 &1058336631
 GameObject:
   m_ObjectHideFlags: 0
@@ -2886,7 +2914,7 @@ GameObject:
   - component: {fileID: 1511580411}
   - component: {fileID: 1511580415}
   - component: {fileID: 1511580416}
-  m_Layer: 0
+  m_Layer: 16
   m_Name: Capsule
   m_TagString: Enemy
   m_Icon: {fileID: 0}

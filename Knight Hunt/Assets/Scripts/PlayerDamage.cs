@@ -8,13 +8,16 @@ public class PlayerDamage : MonoBehaviour
     [SerializeField] float distance = 3, damageDelay = 1;
     [SerializeField] int damageAmount;
 
-    [Header("Attack SFX")]
+    [Header("SFX")]
+    [SerializeField] private AudioClip[] damageSFX;
     [SerializeField] private AudioClip[] attackSFX;
-    [SerializeField] private float audioLength = 1;
+    //[SerializeField] private float audioLength = 1;
 
+    //Internal Variables
+    private BoxCollider2D frontOfPlayer;
     private AudioSource audioSource;
     float timer;
-    [HideInInspector] public bool playerCloseToEnemy;
+    //[HideInInspector] public bool playerCloseToEnemy;
 
     public int Song { get; set; } = 0;
     //public float SongLength { get; set; }
@@ -22,6 +25,7 @@ public class PlayerDamage : MonoBehaviour
     private void Start()
     {
         audioSource = GetComponent<AudioSource>();
+        frontOfPlayer = GetComponent<BoxCollider2D>();
     }
 
     // Update is called once per frame
@@ -29,22 +33,36 @@ public class PlayerDamage : MonoBehaviour
     {
         timer += Time.deltaTime;
 
-        if (!GameObject.FindWithTag("Enemy"))
+        bool isAttacking = Input.GetKeyDown(KeyCode.Mouse0) && timer >= damageDelay;
+
+        GameObject enemy = GameObject.FindWithTag("Enemy");
+
+        if (!enemy)
         {
             return;
         }
 
-        Vector3 enemyPosition = GameObject.FindWithTag("Enemy").transform.position - transform.position;
+        Vector3 enemyPosition = enemy.transform.position - transform.position;
 
-        if (enemyPosition.magnitude < distance && Input.GetKeyDown(KeyCode.Mouse0) && timer >= damageDelay)
+        if (isAttacking)
         {
-            GameObject.FindWithTag("Enemy").GetComponent<EnemyHealth>().TakeDamage(damageAmount);
-            timer = 0;
+            bool closeToEnemy = enemyPosition.magnitude < distance;
 
-            if (Song != attackSFX.Length)
+            if (closeToEnemy && frontOfPlayer.IsTouchingLayers(LayerMask.GetMask("Enemy")))
             {
-                PlayNextSFX(attackSFX);
+                enemy.GetComponent<EnemyHealth>().TakeDamage(damageAmount);
+                PlaySFX(damageSFX);
             }
+            PlaySFX(attackSFX);
+            timer = 0;
+        }
+    }
+
+    private void PlaySFX(AudioClip[] audioClips)
+    {
+        if (Song != audioClips.Length)
+        {
+            PlayNextSFX(audioClips);
         }
     }
 
