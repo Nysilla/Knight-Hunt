@@ -8,7 +8,6 @@ public class PlayAttackSFX : MonoBehaviour
     [SerializeField] private AudioClip[] attackSFX;
     private PlayerDamage playerDamage;
     private AudioSource audioSource;
-    float timer;
     public int Song { get; set; } = 0;
     // Start is called before the first frame update
     void Start()
@@ -23,7 +22,6 @@ public class PlayAttackSFX : MonoBehaviour
         if (playerDamage.isAttacking)
         {
             PlaySFX(attackSFX);
-            timer = 0;
         }
     }
 

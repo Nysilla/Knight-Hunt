@@ -5,30 +5,23 @@ using UnityEngine;
 
 public class PlayerDamage : MonoBehaviour
 {
-    [SerializeField] float distance = 3, damageDelay = 1;
-    [SerializeField] int damageAmount;
+    [SerializeField] private float attackDistance = 0.5f, damageDelay = 1;
+    [SerializeField] private int damageAmount = 10;
+    [SerializeField] private GameObject attackPoint;
     [SerializeField] private AudioClip[] damageSFX;
     //[SerializeField] private float audioLength = 1;
 
     //Internal Variables
-    private BoxCollider2D frontOfPlayer;
-    private GameObject enemy;
     private AudioSource audioSource;
-    private CapsuleCollider2D capsule;
-    [HideInInspector] public bool isAttacking; 
-    float timer;
-    //[HideInInspector] public bool playerCloseToEnemy;
+    private float timer;
+    private GameObject enemy;
+    [HideInInspector] public bool isAttacking;
 
     public int Song { get; set; } = 0;
-    //public float SongLength { get; set; }
 
     private void Start()
     {
         audioSource = GetComponent<AudioSource>();
-        frontOfPlayer = GetComponent<BoxCollider2D>();
-        //enemy = GameObject.FindGameObjectsWithTag("Enemy");
-        capsule = GetComponent<CapsuleCollider2D>();
-        enemy = GameObject.FindWithTag("Enemy");
     }
 
     // Update is called once per frame
@@ -38,29 +31,29 @@ public class PlayerDamage : MonoBehaviour
 
         isAttacking = Input.GetKeyDown(KeyCode.Mouse0) && timer >= damageDelay;
 
-        if (!enemy)
-        {
-            return;
-        }
-
-        Vector3 enemyPosition = enemy.transform.position - transform.position;
-
         if (isAttacking)
         {
-            //bool closeToEnemy = enemyPosition.magnitude < distance;
-
-            bool playerFacingEnemy = frontOfPlayer.IsTouchingLayers(LayerMask.GetMask("Enemy"));
-
-            if (/*closeToEnemy && */ playerFacingEnemy)
-            {
-                enemy.GetComponent<EnemyHealth>().TakeDamage(damageAmount);
-                PlaySFX(damageSFX);
-                timer = 0;
-            }
+            Attack();
         }
     }
 
-    public void PlaySFX(AudioClip[] audioClips)
+    private void Attack()
+    {
+        Collider2D[] enemies = Physics2D.OverlapCircleAll(attackPoint.transform.position, attackDistance, LayerMask.GetMask("Enemy"));
+
+        foreach(Collider2D enemy in enemies)
+        {
+            this.enemy = enemy.gameObject;
+            EnemyHealth enemyHealth = enemy.GetComponent<EnemyHealth>();
+            enemyHealth.TakeDamage(damageAmount);
+            PlaySFX(damageSFX);
+            Debug.Log(enemy);
+        }
+
+        timer = 0;
+    }
+
+    private void PlaySFX(AudioClip[] audioClips)
     {
         if (Song != audioClips.Length)
         {
@@ -80,5 +73,15 @@ public class PlayerDamage : MonoBehaviour
         }
         audioSource.PlayOneShot(audios[Song]);
         //SongLength = 0;
+    }
+
+    private void OnDrawGizmosSelected()
+    {
+        if (attackPoint == null)
+        {
+            return;
+        }
+
+        Gizmos.DrawWireSphere(attackPoint.transform.position, attackDistance);
     }
 }
