@@ -24,7 +24,7 @@ public class PlayerHealth : MonoBehaviour
     void Start()
     {
         health = maxHealth;
-        healthText.text = "Health: " + health;
+        healthText.text = $"Health: {health}";
         audioSource = GetComponent<AudioSource>();
     }
 
@@ -33,7 +33,6 @@ public class PlayerHealth : MonoBehaviour
         if (this.health > 0)
         {
             this.health -= health;
-            healthText.text = "Health: " + this.health;
         }
 
         if (this.health <= 0)
@@ -44,7 +43,7 @@ public class PlayerHealth : MonoBehaviour
             gameObject.SetActive(false);
             */
 
-            PlayerDied();
+            //PlayerDied();
         }
     }
 
@@ -54,20 +53,17 @@ public class PlayerHealth : MonoBehaviour
         {
             audioSource.PlayOneShot(healSFX);
             this.health += health;
-            healthText.text = "Health: " + this.health;
         }
 
         if (this.health > maxHealth)
         {
             this.health = maxHealth;
-            healthText.text = "Health: " + this.health;
         }
     }
 
     public void SetHealth(int health)
     {
         this.health = health;
-        healthText.text = "Health: " + this.health;
     }
 
     private void PlayerDied()
@@ -96,5 +92,7 @@ public class PlayerHealth : MonoBehaviour
             Heal(10);
             healTimer = 0;
         }
+
+        healthText.text = $"Health: {health}";
     }
 }
