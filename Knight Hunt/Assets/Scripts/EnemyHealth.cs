@@ -22,7 +22,7 @@ public class EnemyHealth : MonoBehaviour
         bool playerIsClose = playerPosition.magnitude < distanceFromPlayer;
 
         healthAndNameText.enabled = playerIsClose;
-        healthAndNameText.text = gameObject.name + " / Health: " + currentHealth;
+        healthAndNameText.text = gameObject.tag + " / Health: " + currentHealth;
     }
     public void TakeDamage(int amount)
     {
