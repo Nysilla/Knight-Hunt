@@ -19,10 +19,9 @@ public class EnemyHealth : MonoBehaviour
     void Update()
     {
         Vector3 playerPosition = GameObject.FindWithTag("Player").transform.position - transform.position;
-
         bool playerIsClose = playerPosition.magnitude < distanceFromPlayer;
+
         healthAndNameText.enabled = playerIsClose;
-        Debug.Log("Is Near: " + playerIsClose);
         healthAndNameText.text = gameObject.name + " / Health: " + currentHealth;
     }
     public void TakeDamage(int amount)
@@ -31,6 +30,7 @@ public class EnemyHealth : MonoBehaviour
         
         if (currentHealth <= 0)
         {
+            healthAndNameText.enabled = false;
             Destroy(gameObject);
         }
     }

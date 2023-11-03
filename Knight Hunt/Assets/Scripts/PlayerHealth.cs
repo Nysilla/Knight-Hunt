@@ -24,7 +24,7 @@ public class PlayerHealth : MonoBehaviour
     void Start()
     {
         health = maxHealth;
-        healthText.text = "Health: " + health;
+        healthText.text = $"Health: {health}";
         audioSource = GetComponent<AudioSource>();
     }
 
