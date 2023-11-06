@@ -33,6 +33,7 @@ public class EnemyHealth : MonoBehaviour
         {
             healthText.enabled = true;
         }
+
         healthText.text = enemyNameAndHealth;
     }
 
