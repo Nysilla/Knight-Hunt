@@ -1521,6 +1521,7 @@ GameObject:
   - component: {fileID: 910211202}
   - component: {fileID: 910211201}
   - component: {fileID: 910211200}
+  - component: {fileID: 910211205}
   m_Layer: 16
   m_Name: Skeleton (1)
   m_TagString: Enemy
@@ -1668,6 +1669,20 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &910211205
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 910211198}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dcdca7993ae2b804fac4a92e76870b57, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  moveSpeed: 1
+  chaseDistance: 3
 --- !u!1 &949524853
 GameObject:
   m_ObjectHideFlags: 0
@@ -2168,7 +2183,6 @@ MonoBehaviour:
   jumpSpeed: 12
   isMoving: 0
   isGrounded: 0
-  playerHasHorizontalSpeed: 0
 --- !u!114 &1033418945
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3282,6 +3296,7 @@ GameObject:
   - component: {fileID: 1511580411}
   - component: {fileID: 1511580415}
   - component: {fileID: 1511580416}
+  - component: {fileID: 1511580417}
   m_Layer: 16
   m_Name: Skeleton
   m_TagString: Enemy
@@ -3429,6 +3444,20 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
+--- !u!114 &1511580417
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1511580409}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dcdca7993ae2b804fac4a92e76870b57, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  moveSpeed: 1
+  chaseDistance: 3
 --- !u!1 &1539628719
 GameObject:
   m_ObjectHideFlags: 0

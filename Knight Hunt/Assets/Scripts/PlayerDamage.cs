@@ -47,7 +47,6 @@ public class PlayerDamage : MonoBehaviour
             EnemyHealth enemyHealth = enemy.GetComponent<EnemyHealth>();
             enemyHealth.TakeDamage(damageAmount);
             PlaySFX(damageSFX);
-            Debug.Log(enemy);
         }
 
         timer = 0;
