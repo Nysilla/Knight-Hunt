@@ -54,24 +54,23 @@ public class PlayerMovement : MonoBehaviour
             rb.velocity = movePlayer;
         }
 
-        if (isMoving)
-        {
-            animator.SetBool("isMoving", true);
-        }
-        else
-        {
-            animator.SetBool("isMoving", false);
-        }
+        animator.SetBool("isMoving", isMoving && isGrounded);
     }
 
     private void OnJump(InputValue value)
     {
-        if (!isGrounded) return;
+        if (!isGrounded)
+        {
+            animator.SetBool("isMoving", true);
+            return;
+        }
 
         if (value.isPressed)
         {
             rb.velocity += new Vector2(0, jumpSpeed);
         }
+
+        animator.SetBool("isMoving", false);
     }
 
     private void FlipSprite()
