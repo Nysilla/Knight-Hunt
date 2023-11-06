@@ -24,7 +24,7 @@ public class PlayerMovement : MonoBehaviour
     Rigidbody2D rb;
     Animator animator;
     Collider2D cldr;
-    [HideInInspector] public bool isMoving, isGrounded, playerHasHorizontalSpeed;
+    [HideInInspector] public bool isMoving, isGrounded;
 
 
     private void Start()
@@ -76,9 +76,9 @@ public class PlayerMovement : MonoBehaviour
 
     private void FlipSprite()
     {
-        playerHasHorizontalSpeed = Mathf.Abs(rb.velocity.x) > Mathf.Epsilon;
+        bool horizontalSpeed = Mathf.Abs(rb.velocity.x) > Mathf.Epsilon;
 
-        if (playerHasHorizontalSpeed)
+        if (horizontalSpeed)
         {
             transform.localScale = new Vector2(Mathf.Sign(rb.velocity.x), 1);
         }
