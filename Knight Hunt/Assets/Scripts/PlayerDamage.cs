@@ -16,12 +16,15 @@ public class PlayerDamage : MonoBehaviour
     private float timer;
     private GameObject enemy;
     [HideInInspector] public bool isAttacking;
+    private Animator animator;
 
     public int Song { get; set; } = 0;
 
     private void Start()
     {
         audioSource = GetComponent<AudioSource>();
+        animator = GetComponent<Animator>();
+        timer = damageDelay;
     }
 
     // Update is called once per frame
@@ -48,7 +51,7 @@ public class PlayerDamage : MonoBehaviour
             enemyHealth.TakeDamage(damageAmount);
             PlaySFX(damageSFX);
         }
-
+        animator.SetTrigger("Attack");
         timer = 0;
     }
 
