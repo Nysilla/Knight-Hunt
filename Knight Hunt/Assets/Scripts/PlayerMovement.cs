@@ -69,7 +69,7 @@ public class PlayerMovement : MonoBehaviour
         {
             rb.velocity += new Vector2(0, jumpSpeed);
             isJumping = true;
-            animator.SetTrigger("isJumping");
+            animator.SetTrigger("Jump");
         }
     }
 
