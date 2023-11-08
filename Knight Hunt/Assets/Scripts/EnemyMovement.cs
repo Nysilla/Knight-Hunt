@@ -20,7 +20,6 @@ public class EnemyMovement : MonoBehaviour
     {
         isMoving = Mathf.Abs(rb.velocity.x) > Mathf.Epsilon;
         player = GameObject.FindWithTag("Player");
-        //rb.velocity = new Vector2(moveSpeed, 0f);
 
         MoveEnemy();
         FlipEnemyFacing();
@@ -42,12 +41,6 @@ public class EnemyMovement : MonoBehaviour
             rb.velocity = Vector2.zero;
         }
     }
-
-    /* void OnTriggerExit2D(Collider2D other)
-    {
-        moveSpeed = -moveSpeed;
-        FlipEnemyFacing();
-    } */
 
     void FlipEnemyFacing()
     {

@@ -7,24 +7,20 @@ public class PlayerHealth : MonoBehaviour
     public int health;
     public int maxHealth = 100;
     [SerializeField] private float healDelay;
-    [SerializeField] private TextMeshProUGUI healthText;
-    [SerializeField] private AudioClip healSFX;
+    [SerializeField] private TextMeshProUGUI healthText, healPotionsText;
+    [SerializeField] private AudioClip healSFX, healPickupSFX;
+
+    //Internal Variables
+    [HideInInspector] public int healPotions;
     private AudioSource audioSource;
     private float healTimer;
-
-    //test
-    [Header("Test")]
-    [SerializeField] private bool shouldDamagePlayer;
-    [SerializeField] private float damageDelay = 1; 
-
-    private float timer;
-    //
 
     // Start is called before the first frame update
     void Start()
     {
         health = maxHealth;
         healthText.text = $"Health: {health}";
+        healPotionsText.text = $"= {healPotions}";
         audioSource = GetComponent<AudioSource>();
     }
 
@@ -39,6 +35,8 @@ public class PlayerHealth : MonoBehaviour
         {
             SetHealth(0);
 
+            UnityEngine.SceneManagement.SceneManager.LoadScene("sand box 4");
+
             /*alternative
             gameObject.SetActive(false);
             */
@@ -51,8 +49,9 @@ public class PlayerHealth : MonoBehaviour
     {
         if (this.health < maxHealth)
         {
-            audioSource.PlayOneShot(healSFX);
             this.health += health;
+            healPotions--;
+            audioSource.PlayOneShot(healSFX);
         }
 
         if (this.health > maxHealth)
@@ -75,24 +74,25 @@ public class PlayerHealth : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //test
-        timer += Time.deltaTime;
-
-        if (shouldDamagePlayer && timer >= damageDelay)
-        {
-            TakeDamage(15);
-            timer = 0;
-        }
-        //
-
         healTimer += Time.deltaTime;
 
-        if (Input.GetKeyDown(KeyCode.Q) && healTimer >= healDelay)
+        if (Input.GetKeyDown(KeyCode.Q) && healTimer >= healDelay && healPotions > 0)
         {
             Heal(10);
             healTimer = 0;
         }
 
         healthText.text = $"Health: {health}";
+        healPotionsText.text = $"= {healPotions}";
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.CompareTag("Health Potion"))
+        {
+            healPotions++;
+            audioSource.PlayOneShot(healPickupSFX);
+            Destroy(collision.gameObject);
+        }
     }
 }

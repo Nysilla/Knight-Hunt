@@ -24,6 +24,7 @@ public class PlayerDamage : MonoBehaviour
     {
         audioSource = GetComponent<AudioSource>();
         animator = GetComponent<Animator>();
+        timer = damageDelay;
     }
 
     // Update is called once per frame

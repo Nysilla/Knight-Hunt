@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class PlayerMovementSFX : MonoBehaviour
 {
-    [SerializeField] AudioClip[] grass, gravel, metal, wood, sand, snow, rock /*, water*/ ;
+    [SerializeField] AudioClip[] grass, gravel, metal, wood, sand, snow, rock;
     [SerializeField] private float audioLength = 1;
     private AudioSource audio;
     private PlayerMovement player;
@@ -63,10 +63,6 @@ public class PlayerMovementSFX : MonoBehaviour
         {
             return snow;
         }
-        /* else if (collider.IsTouchingLayers(LayerMask.GetMask("Water")))
-        {
-            return water;
-        } */
         else if (collider.IsTouchingLayers(LayerMask.GetMask("Rock")))
         {
             return rock;
