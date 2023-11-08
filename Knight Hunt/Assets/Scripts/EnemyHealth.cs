@@ -43,6 +43,8 @@ public class EnemyHealth : MonoBehaviour
         
         if (currentHealth <= 0)
         {
+            //potion given by chance
+
             healthText.enabled = false;
             Destroy(gameObject);
         }
