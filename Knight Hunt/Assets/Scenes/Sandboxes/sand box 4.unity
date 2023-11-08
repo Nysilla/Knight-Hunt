@@ -1522,6 +1522,7 @@ GameObject:
   - component: {fileID: 910211201}
   - component: {fileID: 910211200}
   - component: {fileID: 910211205}
+  - component: {fileID: 910211206}
   m_Layer: 16
   m_Name: Skeleton (1)
   m_TagString: Enemy
@@ -1608,7 +1609,7 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
-  m_Mass: 100
+  m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: 0.05
   m_GravityScale: 1
@@ -1681,8 +1682,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dcdca7993ae2b804fac4a92e76870b57, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 1
-  chaseDistance: 3
+  moveSpeed: 2
+  chaseDistance: 7
+--- !u!114 &910211206
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 910211198}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bbace7f1d50940441b29ac7db99cf8bd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 15
+  damageDelay: 2
 --- !u!1 &949524853
 GameObject:
   m_ObjectHideFlags: 0
@@ -2199,7 +2214,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   attackDistance: 0.5
-  damageDelay: 0.5
+  damageDelay: 0.7
   damageAmount: 10
   attackPoint: {fileID: 1276773709}
   damageSFX:
@@ -2243,8 +2258,8 @@ MonoBehaviour:
   healDelay: 2
   healthText: {fileID: 1380002785}
   healSFX: {fileID: 8300000, guid: cfce0cea076109f478783201b2a9f57f, type: 3}
+  shouldDamagePlayer: 0
   damageDelay: 2
-  shouldDamagePlayer: 1
 --- !u!82 &1033418948
 AudioSource:
   m_ObjectHideFlags: 0
@@ -3331,6 +3346,7 @@ GameObject:
   - component: {fileID: 1511580415}
   - component: {fileID: 1511580416}
   - component: {fileID: 1511580417}
+  - component: {fileID: 1511580418}
   m_Layer: 16
   m_Name: Skeleton
   m_TagString: Enemy
@@ -3366,7 +3382,7 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
-  m_Mass: 100
+  m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: 0.05
   m_GravityScale: 1
@@ -3490,8 +3506,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dcdca7993ae2b804fac4a92e76870b57, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 1
-  chaseDistance: 3
+  moveSpeed: 2
+  chaseDistance: 7
+--- !u!114 &1511580418
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1511580409}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bbace7f1d50940441b29ac7db99cf8bd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 15
+  damageDelay: 2
 --- !u!1 &1539628719
 GameObject:
   m_ObjectHideFlags: 0
