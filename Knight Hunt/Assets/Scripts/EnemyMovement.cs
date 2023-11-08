@@ -8,6 +8,7 @@ public class EnemyMovement : MonoBehaviour
 
     //Internal Variables
     private Rigidbody2D rb;
+    private GameObject player;
     private bool isMoving;
 
     void Start()
@@ -18,6 +19,7 @@ public class EnemyMovement : MonoBehaviour
     void FixedUpdate()
     {
         isMoving = Mathf.Abs(rb.velocity.x) > Mathf.Epsilon;
+        player = GameObject.FindWithTag("Player");
         //rb.velocity = new Vector2(moveSpeed, 0f);
 
         MoveEnemy();
@@ -26,21 +28,19 @@ public class EnemyMovement : MonoBehaviour
 
     private void MoveEnemy()
     {
-        Vector3 playerPosition = GameObject.FindWithTag("Player").transform.position - transform.position;
+        Vector3 playerPosition = player.transform.position - transform.position;
         bool playerIsClose = playerPosition.magnitude < chaseDistance;
         
-
         if (playerIsClose)
         {
             playerPosition.Normalize();
-            rb.velocity = playerPosition * new Vector2(x: 100 * moveSpeed * Time.deltaTime, y: rb.velocity.y);
+            Vector2 moveEnemy = playerPosition * new Vector2(x: 100 * Time.deltaTime * moveSpeed, y: rb.velocity.y);
+            rb.velocity = moveEnemy;
         }
         else
         {
-            rb.velocity = Vector3.zero;
+            rb.velocity = Vector2.zero;
         }
-
-        
     }
 
     /* void OnTriggerExit2D(Collider2D other)
@@ -58,4 +58,6 @@ public class EnemyMovement : MonoBehaviour
             transform.localScale = new Vector3(Mathf.Sign(rb.velocity.x), 1, 1);
         }
     }
+
+    private void OnDrawGizmosSelected() => Gizmos.DrawWireSphere(transform.position, chaseDistance);
 }

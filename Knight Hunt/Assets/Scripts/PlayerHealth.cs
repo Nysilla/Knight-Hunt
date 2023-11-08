@@ -14,8 +14,8 @@ public class PlayerHealth : MonoBehaviour
 
     //test
     [Header("Test")]
-    [SerializeField] private float damageDelay = 1; 
     [SerializeField] private bool shouldDamagePlayer;
+    [SerializeField] private float damageDelay = 1; 
 
     private float timer;
     //

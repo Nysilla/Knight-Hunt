@@ -4,24 +4,21 @@ using UnityEngine;
 
 public class EnemyDamage : MonoBehaviour
 {
-    public PlayerHealth playerHealth; 
-    public int damage = 2;
+    private PlayerHealth playerHealth; 
+    [SerializeField] private int damage = 1;
+    [SerializeField] private float damageDelay = 1;
+    private float timer;
     //make serilized field fdawdor dmg
     // Start is called before the first frame update
-    void Start()
+    void Start() => playerHealth = GameObject.FindWithTag("Player").GetComponent<PlayerHealth>();
+    public void OnCollisionStay2D(Collision2D collision)
     {
-        
-    }
-    public void OnCollisionEnter2D(Collision2D collision)
-    {
-        
-        if (collision.gameObject.tag == "Player")
-
+        if (collision.gameObject.CompareTag("Player") && timer >= damageDelay)
+        {
             playerHealth.TakeDamage(damage);
+            timer = 0;
+        }
     }
-    // Update is called once per frame
-    void Update()
-    {
-    
-    }
+
+    private void Update() => timer += Time.deltaTime;
 }

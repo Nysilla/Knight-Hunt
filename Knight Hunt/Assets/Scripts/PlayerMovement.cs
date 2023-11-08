@@ -24,8 +24,7 @@ public class PlayerMovement : MonoBehaviour
     Rigidbody2D rb;
     Animator animator;
     Collider2D cldr;
-    [HideInInspector] public bool isMoving, isGrounded;
-
+    [HideInInspector] public bool isMoving, isGrounded, isJumping, wasGrounded = true;
 
     private void Start()
     {
@@ -33,6 +32,7 @@ public class PlayerMovement : MonoBehaviour
         animator = GetComponent<Animator>();
         cldr = GetComponent<Collider2D>();
         //startGravity = rb.gravityScale;
+        isGrounded = cldr.IsTouchingLayers(LayerMask.GetMask("Grass", "Gravel", "Rock", "Sand", "Snow", "Wood", "Metal"));
     }
 
     private void FixedUpdate()
@@ -40,8 +40,14 @@ public class PlayerMovement : MonoBehaviour
         MovePlayer();
         FlipSprite();
         //ClimbLadder();
+        //animator.SetBool("isJumping", isJumping);
+    }
+
+    private void Update()
+    {
         isMoving = Mathf.Abs(rb.velocity.x) > Mathf.Epsilon;
-        isGrounded = cldr.IsTouchingLayers(LayerMask.GetMask("Grass", "Gravel", "Metal", "Wood", /*"Water", */ "Sand", "Snow", "Rock"));
+        isGrounded = cldr.IsTouchingLayers(LayerMask.GetMask("Grass", "Gravel", "Rock", "Sand", "Snow", "Wood", "Metal"));
+        animator.SetBool("isGrounded", isGrounded);
     }
 
     private void OnMove(InputValue value) => moveInput = value.Get<Vector2>();
@@ -59,18 +65,12 @@ public class PlayerMovement : MonoBehaviour
 
     private void OnJump(InputValue value)
     {
-        if (!isGrounded)
-        {
-            animator.SetBool("isMoving", true);
-            return;
-        }
-
-        if (value.isPressed)
+        if (isGrounded && value.isPressed)
         {
             rb.velocity += new Vector2(0, jumpSpeed);
+            isJumping = true;
+            animator.SetTrigger("Jump");
         }
-
-        animator.SetBool("isMoving", false);
     }
 
     private void FlipSprite()
