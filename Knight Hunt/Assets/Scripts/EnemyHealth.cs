@@ -43,6 +43,11 @@ public class EnemyHealth : MonoBehaviour
         
         if (currentHealth <= 0)
         {
+            if (Random.Range(1, 6) == 5)
+            {
+                GameObject.FindWithTag("Player").GetComponent<PlayerHealth>().healPotions++;
+            }
+
             healthText.enabled = false;
             Destroy(gameObject);
         }
