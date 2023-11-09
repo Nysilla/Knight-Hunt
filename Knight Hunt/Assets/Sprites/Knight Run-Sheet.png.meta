@@ -121,11 +121,11 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 15
-        y: 3
+        y: 0
         width: 72
-        height: 67
+        height: 77
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -141,12 +141,12 @@ TextureImporter:
       name: Knight Run-Sheet_1
       rect:
         serializedVersion: 2
-        x: 120
+        x: 110
         y: 0
-        width: 54
-        height: 74
+        width: 72
+        height: 77
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -162,12 +162,12 @@ TextureImporter:
       name: Knight Run-Sheet_2
       rect:
         serializedVersion: 2
-        x: 224
+        x: 210
         y: 0
-        width: 57
-        height: 69
+        width: 72
+        height: 77
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -183,12 +183,12 @@ TextureImporter:
       name: Knight Run-Sheet_3
       rect:
         serializedVersion: 2
-        x: 316
+        x: 303
         y: 0
-        width: 41
-        height: 71
+        width: 72
+        height: 77
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -204,12 +204,12 @@ TextureImporter:
       name: Knight Run-Sheet_4
       rect:
         serializedVersion: 2
-        x: 403
+        x: 398
         y: 0
-        width: 65
-        height: 71
+        width: 72
+        height: 76
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -225,12 +225,12 @@ TextureImporter:
       name: Knight Run-Sheet_5
       rect:
         serializedVersion: 2
-        x: 502
+        x: 498
         y: 0
-        width: 64
-        height: 69
+        width: 72
+        height: 77
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -246,12 +246,12 @@ TextureImporter:
       name: Knight Run-Sheet_6
       rect:
         serializedVersion: 2
-        x: 600
+        x: 595
         y: 0
-        width: 62
-        height: 67
+        width: 72
+        height: 77
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -267,12 +267,12 @@ TextureImporter:
       name: Knight Run-Sheet_7
       rect:
         serializedVersion: 2
-        x: 705
+        x: 689
         y: 0
-        width: 47
-        height: 68
+        width: 72
+        height: 77
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -291,9 +291,9 @@ TextureImporter:
         x: 803
         y: 0
         width: 61
-        height: 69
+        height: 77
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -310,11 +310,11 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 891
-        y: 6
+        y: 0
         width: 56
-        height: 66
+        height: 77
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
