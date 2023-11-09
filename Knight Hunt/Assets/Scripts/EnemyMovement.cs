@@ -5,12 +5,11 @@ using UnityEngine;
 public class EnemyMovement : MonoBehaviour
 {
     [SerializeField] private float moveSpeed = 1f, chaseDistance = 1;
+    [SerializeField] private bool canMove = true;
 
     //Internal Variables
     private Rigidbody2D rb;
     private GameObject player;
-    public bool canMove = true;
-    public Mathf mathF;
 
     void Start()
     {
@@ -22,12 +21,15 @@ public class EnemyMovement : MonoBehaviour
     {
         //player = GameObject.FindWithTag("Player");
 
-        if (canMove)
+        rb.velocity = new(0, rb.velocity.y);
+
+        if (!canMove)
         {
-            MoveEnemy();
-            FlipEnemyFacing();
+            return;
         }
-        
+
+        MoveEnemy();
+        FlipEnemyFacing();
     }
 
     private void MoveEnemy()
@@ -36,7 +38,7 @@ public class EnemyMovement : MonoBehaviour
         bool playerIsClose = playerPosition.magnitude < chaseDistance;
 
         playerPosition.Normalize();
-        Vector2 moveEnemy = playerPosition.x * new Vector2(x: 100 * Time.deltaTime * moveSpeed, y: rb.velocity.y);
+        Vector2 moveEnemy = new(x: 100 * Time.deltaTime * moveSpeed * playerPosition.x, y: rb.velocity.y);
         rb.velocity = playerIsClose ? moveEnemy : Vector3.zero;
     }
 
