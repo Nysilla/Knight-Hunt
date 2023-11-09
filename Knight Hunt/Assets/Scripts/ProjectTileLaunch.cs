@@ -5,27 +5,72 @@ using UnityEngine;
 public class ProjectTileLaunch : MonoBehaviour
 {
     public GameObject projectilePrefab;
+    public GameObject projectilePrefab2;
+
     public Transform launchPoint;
-   
+
+    public float defaultTime;
 
     public float shootTime;
     public float shootCounter;
-    // Start is called before the first frame update
+
+    public bool Switch;
+    
     void Start()
     {
-        shootCounter = shootTime;
-     
-    }
+        Switch = false;
 
-    // Update is called once per frame
+        defaultTime = shootTime;
+
+        shootCounter = shootTime;
+        shootCounter = 0;
+    }
+    
     void Update()
     {
-        if(Input.GetButton("Fire1") && shootCounter <= 0)
+        if (Input.GetKey(KeyCode.R) && !Switch)
+        {
+            Switch = true;
+            shootTime = 6f;
+        }
+        else if(Input.GetKey(KeyCode.R) && Switch)
+        {
+            Switch = false;
+            shootTime = defaultTime;
+        }
+
+        shootCounter -= Time.deltaTime;
+    }
+    
+    void OnLeftprojectile()
+    {
+        if (shootCounter < 0 && Switch == false)
         {
             Instantiate(projectilePrefab, launchPoint.position, Quaternion.identity);
-                shootCounter = shootTime;
+            shootCounter = shootTime;
+            shootCounter -= Time.deltaTime;
         }
-        shootCounter -= Time.deltaTime;
-        
+        if (shootCounter < 0 && Switch == true)
+        {
+            Instantiate(projectilePrefab2, launchPoint.position, Quaternion.identity);
+            shootCounter = shootTime;
+            shootCounter -= Time.deltaTime;
+        }
+    }
+
+    void OnRightprojectile()
+    {
+        if (shootCounter < 0 && Switch == false)
+        {
+            Instantiate(projectilePrefab, launchPoint.position, Quaternion.identity);
+            shootCounter = shootTime;
+            shootCounter -= Time.deltaTime;
+        }
+        if (shootCounter < 0 && Switch == true)
+        {
+            Instantiate(projectilePrefab2, launchPoint.position, Quaternion.identity);
+            shootCounter = shootTime;
+            shootCounter -= Time.deltaTime;
+        }
     }
 }

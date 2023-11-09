@@ -27,10 +27,15 @@ public class EnemyDamage : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Player") && timer >= damageDelay)
         {
-            playerHealth.TakeDamage(damage);
-            audioSource.PlayOneShot(damageAudio, 1.5f);
-            timer = 0;
+            DamagePlayer();
         }
+    }
+
+    private void DamagePlayer()
+    {
+        playerHealth.TakeDamage(damage);
+        audioSource.PlayOneShot(damageAudio, 1.5f);
+        timer = 0;
     }
 
     private void Update() => timer += Time.deltaTime;
