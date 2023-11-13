@@ -18,8 +18,7 @@ public class PlayerMovement : MonoBehaviour
     Rigidbody2D rb;
     Animator animator;
     Collider2D cldr;
-    [HideInInspector] public bool isMoving, isGrounded, isJumping, wasGrounded = true;
-
+    [HideInInspector] public bool isMoving, isGrounded;
     private void Start()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -59,7 +58,6 @@ public class PlayerMovement : MonoBehaviour
         if (isGrounded && value.isPressed)
         {
             rb.velocity += new Vector2(0, jumpSpeed);
-            isJumping = true;
             animator.SetTrigger("Jump");
         }
     }
