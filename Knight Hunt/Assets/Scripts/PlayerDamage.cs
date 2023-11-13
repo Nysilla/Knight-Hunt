@@ -14,7 +14,6 @@ public class PlayerDamage : MonoBehaviour
     //Internal Variables
     private AudioSource audioSource;
     private float timer;
-    private GameObject enemy;
     [HideInInspector] public bool isAttacking;
     private Animator animator;
 
@@ -38,6 +37,7 @@ public class PlayerDamage : MonoBehaviour
         {
             Attack();
         }
+
     }
 
     private void Attack()
@@ -46,12 +46,6 @@ public class PlayerDamage : MonoBehaviour
 
         foreach (Collider2D enemy in enemies)
         {
-            if (enemy == null)
-            {
-                continue;
-            }
-
-            this.enemy = enemy.gameObject;
             EnemyHealth enemyHealth = enemy.GetComponent<EnemyHealth>();
             enemyHealth.TakeDamage(damageAmount);
             PlaySFX(damageSFX);

@@ -39,7 +39,6 @@ public class PlayerMovement : MonoBehaviour
         isMoving = Mathf.Abs(rb.velocity.x) > Mathf.Epsilon;
         isGrounded = cldr.IsTouchingLayers(LayerMask.GetMask("Grass", "Gravel", "Rock", "Sand", "Snow", "Wood", "Metal"));
         animator.SetBool("isGrounded", isGrounded);
-        Debug.Log(isMoving);
     }
 
     private void OnMove(InputValue value) => moveInput = value.Get<Vector2>();
@@ -52,7 +51,7 @@ public class PlayerMovement : MonoBehaviour
             rb.velocity = movePlayer;
         }
 
-        animator.SetBool("isMoving", isMoving && isGrounded);
+        animator.SetBool("isMoving", isMoving);
     }
 
     private void OnJump(InputValue value)
