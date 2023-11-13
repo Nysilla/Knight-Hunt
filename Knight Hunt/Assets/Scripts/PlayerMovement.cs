@@ -36,7 +36,7 @@ public class PlayerMovement : MonoBehaviour
 
     private void Update()
     {
-        isMoving = Mathf.Abs(rb.velocity.x) > Mathf.Epsilon;
+        isMoving = Mathf.Abs(moveInput.x) > Mathf.Epsilon;
         isGrounded = cldr.IsTouchingLayers(LayerMask.GetMask("Grass", "Gravel", "Rock", "Sand", "Snow", "Wood", "Metal"));
         animator.SetBool("isGrounded", isGrounded);
     }
