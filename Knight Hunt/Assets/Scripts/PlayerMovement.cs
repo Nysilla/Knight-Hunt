@@ -8,7 +8,7 @@ public class PlayerMovement : MonoBehaviour
     [Header("Movement")]
     [SerializeField] float moveSpeed;
     [SerializeField] float moveMultiplier;
-    public bool canMove = true;
+    [SerializeField] bool canMove = true;
 
     [Header("Jumping")]
     [SerializeField] float jumpSpeed;
@@ -19,6 +19,7 @@ public class PlayerMovement : MonoBehaviour
     Animator animator;
     Collider2D cldr;
     [HideInInspector] public bool isMoving, isGrounded;
+
     private void Start()
     {
         rb = GetComponent<Rigidbody2D>();

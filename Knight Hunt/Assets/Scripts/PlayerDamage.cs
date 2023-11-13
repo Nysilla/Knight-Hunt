@@ -79,11 +79,9 @@ public class PlayerDamage : MonoBehaviour
 
     private void OnDrawGizmosSelected()
     {
-        if (attackPoint == null)
+        if (attackPoint != null)
         {
-            return;
+            Gizmos.DrawWireSphere(attackPoint.transform.position, attackDistance);
         }
-
-        Gizmos.DrawWireSphere(attackPoint.transform.position, attackDistance);
     }
 }
