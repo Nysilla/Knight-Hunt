@@ -10,26 +10,32 @@ public class EnemyMovement : MonoBehaviour
     //Internal Variables
     private Rigidbody2D rb;
     private GameObject player;
+    private bool isGrounded;
 
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
         player = GameObject.FindWithTag("Player");
+        isGrounded = rb.IsTouchingLayers(LayerMask.GetMask("Grass", "Gravel", "Rock", "Sand", "Snow", "Wood", "Metal"));
     }
 
     void FixedUpdate()
     {
-        //player = GameObject.FindWithTag("Player");
-
-        rb.velocity = new(0, rb.velocity.y);
-
-        if (!canMove)
+        if (canMove && isGrounded)
         {
+            MoveEnemy();
+            FlipEnemyFacing();
+        }
+        else
+        {
+            rb.velocity = new(0, rb.velocity.y);
             return;
         }
+    }
 
-        MoveEnemy();
-        FlipEnemyFacing();
+    private void Update()
+    {
+        isGrounded = rb.IsTouchingLayers(LayerMask.GetMask("Grass", "Gravel", "Rock", "Sand", "Snow", "Wood", "Metal"));
     }
 
     private void MoveEnemy()
@@ -52,5 +58,8 @@ public class EnemyMovement : MonoBehaviour
         }
     }
 
-    private void OnDrawGizmosSelected() => Gizmos.DrawWireSphere(transform.position, chaseDistance);
+    private void OnDrawGizmosSelected()
+    {
+        Gizmos.DrawWireSphere(transform.position, chaseDistance);
+    }
 }

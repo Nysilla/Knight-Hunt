@@ -14,7 +14,6 @@ public class PlayerDamage : MonoBehaviour
     //Internal Variables
     private AudioSource audioSource;
     private float timer;
-    private GameObject enemy;
     [HideInInspector] public bool isAttacking;
     private Animator animator;
 
@@ -38,15 +37,15 @@ public class PlayerDamage : MonoBehaviour
         {
             Attack();
         }
+
     }
 
     private void Attack()
     {
         Collider2D[] enemies = Physics2D.OverlapCircleAll(attackPoint.transform.position, attackDistance, LayerMask.GetMask("Enemy"));
 
-        foreach(Collider2D enemy in enemies)
+        foreach (Collider2D enemy in enemies)
         {
-            this.enemy = enemy.gameObject;
             EnemyHealth enemyHealth = enemy.GetComponent<EnemyHealth>();
             enemyHealth.TakeDamage(damageAmount);
             PlaySFX(damageSFX);
@@ -79,11 +78,9 @@ public class PlayerDamage : MonoBehaviour
 
     private void OnDrawGizmosSelected()
     {
-        if (attackPoint == null)
+        if (attackPoint != null)
         {
-            return;
+            Gizmos.DrawWireSphere(attackPoint.transform.position, attackDistance);
         }
-
-        Gizmos.DrawWireSphere(attackPoint.transform.position, attackDistance);
     }
 }

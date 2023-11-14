@@ -8,7 +8,7 @@ public class PlayerMovement : MonoBehaviour
     [Header("Movement")]
     [SerializeField] float moveSpeed;
     [SerializeField] float moveMultiplier;
-    public bool canMove = true;
+    [SerializeField] bool canMove = true;
 
     [Header("Jumping")]
     [SerializeField] float jumpSpeed;
@@ -18,7 +18,7 @@ public class PlayerMovement : MonoBehaviour
     Rigidbody2D rb;
     Animator animator;
     Collider2D cldr;
-    [HideInInspector] public bool isMoving, isGrounded, isJumping, wasGrounded = true;
+    [HideInInspector] public bool isMoving, isGrounded;
 
     private void Start()
     {
@@ -36,7 +36,7 @@ public class PlayerMovement : MonoBehaviour
 
     private void Update()
     {
-        isMoving = Mathf.Abs(rb.velocity.x) > Mathf.Epsilon;
+        isMoving = Mathf.Abs(moveInput.x) > Mathf.Epsilon;
         isGrounded = cldr.IsTouchingLayers(LayerMask.GetMask("Grass", "Gravel", "Rock", "Sand", "Snow", "Wood", "Metal"));
         animator.SetBool("isGrounded", isGrounded);
     }
@@ -51,7 +51,7 @@ public class PlayerMovement : MonoBehaviour
             rb.velocity = movePlayer;
         }
 
-        animator.SetBool("isMoving", isMoving && isGrounded);
+        animator.SetBool("isMoving", isMoving);
     }
 
     private void OnJump(InputValue value)
@@ -59,7 +59,6 @@ public class PlayerMovement : MonoBehaviour
         if (isGrounded && value.isPressed)
         {
             rb.velocity += new Vector2(0, jumpSpeed);
-            isJumping = true;
             animator.SetTrigger("Jump");
         }
     }
