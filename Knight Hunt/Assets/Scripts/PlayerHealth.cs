@@ -2,6 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using UnityEngine.SceneManagement;
+
 public class PlayerHealth : MonoBehaviour
 {
     public int health;
@@ -12,6 +14,7 @@ public class PlayerHealth : MonoBehaviour
 
     //Internal Variables
     [HideInInspector] public int healPotions;
+    [SerializeField] private int startingPotions = 3;
     private AudioSource audioSource;
     private float healTimer;
 
@@ -22,6 +25,7 @@ public class PlayerHealth : MonoBehaviour
         healthText.text = $"Health: {health}";
         healPotionsText.text = $"= {healPotions}";
         audioSource = GetComponent<AudioSource>();
+        healPotions = startingPotions;
     }
 
     public void TakeDamage(int health)
@@ -35,7 +39,7 @@ public class PlayerHealth : MonoBehaviour
         {
             SetHealth(0);
 
-            UnityEngine.SceneManagement.SceneManager.LoadScene("sand box 4");
+            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
 
             /*alternative
             gameObject.SetActive(false);
