@@ -379,7 +379,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 55ec68775079cb04aa30f70316200ceb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  attackDistance: 0.6
+  attackDistance: 0.7
   damageDelay: 0.5
   damageAmount: 10
   attackPoint: {fileID: 3337810885620563022}
@@ -427,6 +427,7 @@ MonoBehaviour:
   healSFX: {fileID: 8300000, guid: cfce0cea076109f478783201b2a9f57f, type: 3}
   healPickupSFX: {fileID: 8300000, guid: 90fb91c5d9f18df4183363d36d921429, type: 3}
   healPotions: 0
+  startingPotions: 5
 --- !u!82 &3337810884286923207
 AudioSource:
   m_ObjectHideFlags: 0

@@ -9,7 +9,6 @@ public class PlayerDamage : MonoBehaviour
     [SerializeField] private int damageAmount = 10;
     [SerializeField] private GameObject attackPoint;
     [SerializeField] private AudioClip[] damageSFX;
-    //[SerializeField] private float audioLength = 1;
 
     //Internal Variables
     private AudioSource audioSource;
@@ -73,7 +72,6 @@ public class PlayerDamage : MonoBehaviour
             Song = 0;
         }
         audioSource.PlayOneShot(audios[Song]);
-        //SongLength = 0;
     }
 
     private void OnDrawGizmosSelected()
