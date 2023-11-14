@@ -12,6 +12,7 @@ public class EnemyDamage : MonoBehaviour
     private PlayerHealth playerHealth; 
     private AudioSource audioSource;
     private float timer;
+    private Animator animator;
 
     //make serilized field fdawdor dmg
 
@@ -20,6 +21,7 @@ public class EnemyDamage : MonoBehaviour
     {
         playerHealth = GameObject.FindWithTag("Player").GetComponent<PlayerHealth>();
         audioSource = GetComponent<AudioSource>();
+        animator = GetComponent<Animator>();
         timer = damageDelay;
     }
 
@@ -28,6 +30,7 @@ public class EnemyDamage : MonoBehaviour
         if (collision.gameObject.CompareTag("Player") && timer >= damageDelay)
         {
             DamagePlayer();
+            animator.SetTrigger("Attack");
         }
     }
 
@@ -38,5 +41,8 @@ public class EnemyDamage : MonoBehaviour
         timer = 0;
     }
 
-    private void Update() => timer += Time.deltaTime;
+    private void Update()
+    {
+        timer += Time.deltaTime;
+    }
 }
