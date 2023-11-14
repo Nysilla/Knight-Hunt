@@ -32,7 +32,7 @@ public class PlayerDamage : MonoBehaviour
 
         isAttacking = Input.GetKeyDown(KeyCode.Mouse0) && timer >= damageDelay;
 
-        if (isAttacking)
+        if (isAttacking && GetComponent<PlayerMovement>().isGrounded)
         {
             Attack();
         }
