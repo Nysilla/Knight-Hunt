@@ -10,7 +10,7 @@ public class EnemyMovement : MonoBehaviour
     //Internal Variables
     private Rigidbody2D rb;
     private GameObject player;
-    private bool isGrounded;
+    private bool isGrounded, isMoving;
     private Animator animator;
 
     void Start()
@@ -37,8 +37,10 @@ public class EnemyMovement : MonoBehaviour
 
     private void Update()
     {
+        isMoving = Mathf.Abs(rb.velocity.x) > Mathf.Epsilon;
         isGrounded = rb.IsTouchingLayers(LayerMask.GetMask("Grass", "Gravel", "Rock", "Sand", "Snow", "Wood", "Metal"));
         animator.SetBool("isGrounded", isGrounded);
+        animator.SetBool("isMoving", isMoving);
     }
 
     private void MoveEnemy()
