@@ -8,7 +8,6 @@ public class EnemyHealth : MonoBehaviour
     public int currentHealth = 0;
     [SerializeField] private TMPro.TextMeshProUGUI healthText;
     private Vector3 textScale;
-    private bool isDead;
 
     // Start is called before the first frame update
     void Start()
@@ -16,7 +15,6 @@ public class EnemyHealth : MonoBehaviour
         currentHealth = maxHealth;
         healthText.enabled = false;
         textScale = healthText.transform.localScale;
-        isDead = false;
     }
 
     // Update is called once per frame
@@ -30,12 +28,10 @@ public class EnemyHealth : MonoBehaviour
     {
         if (currentHealth <= 0)
         {
-            isDead = true;
             GetComponent<EnemyMovement>().canMove = false;
             GetComponent<Animator>().SetTrigger("Die");
             healthText.enabled = false;
             Invoke(nameof(DestroyEnemy), 1f);
-            
         }
     }
 

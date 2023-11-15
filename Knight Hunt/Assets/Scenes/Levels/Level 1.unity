@@ -1032,10 +1032,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Skeleton
       objectReference: {fileID: 0}
-    - target: {fileID: 236517637898537951, guid: 8bf22efd3f105e34a88cade0af19003e, type: 3}
-      propertyPath: damage
-      value: 10
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8bf22efd3f105e34a88cade0af19003e, type: 3}
 --- !u!1 &549078987
