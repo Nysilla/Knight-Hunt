@@ -5,18 +5,20 @@ using UnityEngine;
 public class EnemyMovement : MonoBehaviour
 {
     [SerializeField] private float moveSpeed = 1f, chaseDistance = 1;
-    [SerializeField] private bool canMove = true;
+    public bool canMove = true;
 
     //Internal Variables
     private Rigidbody2D rb;
     private GameObject player;
     private bool isGrounded;
+    private Animator animator;
 
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
         player = GameObject.FindWithTag("Player");
         isGrounded = rb.IsTouchingLayers(LayerMask.GetMask("Grass", "Gravel", "Rock", "Sand", "Snow", "Wood", "Metal"));
+        animator = GetComponent<Animator>();
     }
 
     void FixedUpdate()
@@ -36,6 +38,7 @@ public class EnemyMovement : MonoBehaviour
     private void Update()
     {
         isGrounded = rb.IsTouchingLayers(LayerMask.GetMask("Grass", "Gravel", "Rock", "Sand", "Snow", "Wood", "Metal"));
+        animator.SetBool("isGrounded", isGrounded);
     }
 
     private void MoveEnemy()
