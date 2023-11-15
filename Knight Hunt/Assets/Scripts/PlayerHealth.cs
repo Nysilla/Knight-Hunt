@@ -80,7 +80,7 @@ public class PlayerHealth : MonoBehaviour
     {
         healTimer += Time.deltaTime;
 
-        if (Input.GetKeyDown(KeyCode.Q) && healTimer >= healDelay && healPotions > 0)
+        if (Input.GetKeyDown(KeyCode.E) && healTimer >= healDelay && healPotions > 0)
         {
             Heal(10);
             healTimer = 0;
