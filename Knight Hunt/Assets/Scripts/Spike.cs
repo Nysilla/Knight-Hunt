@@ -5,7 +5,7 @@ using UnityEngine;
 public class Spike : MonoBehaviour
 {
     public PlayerHealth playerHealth;
-    public int damage = 2;
+    public int damage = 13; // may be changed
     
     public void OnTriggerEnter2D(UnityEngine.Collider2D collision)
     {
