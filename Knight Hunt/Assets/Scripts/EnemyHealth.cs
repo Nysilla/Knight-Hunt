@@ -21,6 +21,23 @@ public class EnemyHealth : MonoBehaviour
     void Update()
     {
         DisplayEnemyHealth();
+        Die();
+    }
+
+    private void Die()
+    {
+        if (currentHealth <= 0)
+        {
+            GetComponent<EnemyMovement>().canMove = false;
+            GetComponent<Animator>().SetTrigger("Die");
+            healthText.enabled = false;
+            Invoke(nameof(DestroyEnemy), 1f);
+        }
+    }
+
+    private void DestroyEnemy()
+    {
+        Destroy(gameObject);
     }
 
     private void DisplayEnemyHealth()
@@ -40,16 +57,5 @@ public class EnemyHealth : MonoBehaviour
     public void TakeDamage(int amount)
     {
         currentHealth -= amount;
-        
-        if (currentHealth <= 0)
-        {
-            if (Random.Range(1, 6) == 5)
-            {
-                GameObject.FindWithTag("Player").GetComponent<PlayerHealth>().healPotions++;
-            }
-
-            healthText.enabled = false;
-            Destroy(gameObject);
-        }
     }
 }

@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: dda113c4b484cfd42873e505c3873e96
+guid: 830750788e436ef44a63b51c90ceaa9f
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -117,274 +117,169 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Grass TileSheet_0
+      name: Slime Death-Sheet_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 64
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 3e0c5ba4d138f2e44becea4a80561c9c
-      internalID: -775097178
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Grass TileSheet_1
-      rect:
-        serializedVersion: 2
-        x: 32
-        y: 64
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 10555ed7dd8f4f64a84dc5c82610cff1
-      internalID: -782192208
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Grass TileSheet_2
-      rect:
-        serializedVersion: 2
-        x: 64
-        y: 64
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 3801f0df5a28ba6408efca862fc761f6
-      internalID: -1448762208
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Grass TileSheet_3
-      rect:
-        serializedVersion: 2
-        x: 96
-        y: 64
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: b0d0ccb1648022945b75dc420ecbd5b0
-      internalID: -1054851488
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Grass TileSheet_4
-      rect:
-        serializedVersion: 2
-        x: 128
-        y: 64
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: ef67b0819c6bc7045a3b9afd90fce536
-      internalID: -458676857
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Grass TileSheet_5
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 32
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 7b3eaec6f06d4b7438e4990e27a57b89
-      internalID: 1088236537
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Grass TileSheet_6
-      rect:
-        serializedVersion: 2
-        x: 32
-        y: 32
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 3c3c9972002a9a64dbc880f54810027e
-      internalID: 1305229002
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Grass TileSheet_7
-      rect:
-        serializedVersion: 2
-        x: 64
-        y: 32
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: dcf6525942bf01b4ca5625c3fbffbc9f
-      internalID: 1210609598
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Grass TileSheet_8
-      rect:
-        serializedVersion: 2
-        x: 96
-        y: 32
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 0e6b423fc0f233e4488f72338e6397e7
-      internalID: 417484656
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Grass TileSheet_9
-      rect:
-        serializedVersion: 2
-        x: 128
-        y: 32
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: d9451dd696dbe4241aff6649c3df82e8
-      internalID: -112382719
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Grass TileSheet_10
-      rect:
-        serializedVersion: 2
-        x: 0
+        x: 12
         y: 0
-        width: 32
-        height: 32
+        width: 48
+        height: 43
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 3738462471898da499dcdd0cbd648a4d
-      internalID: 262860638
+      spriteID: bdfccd444dba1c142af1cb4bbfd27272
+      internalID: 269825138
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Grass TileSheet_11
+      name: Slime Death-Sheet_1
       rect:
         serializedVersion: 2
-        x: 32
+        x: 124
         y: 0
-        width: 32
-        height: 32
+        width: 57
+        height: 43
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: bbf47063870c0624f8bad1f8d5ceba40
-      internalID: -515517799
+      spriteID: e79ed2f4b79fde0428cb4fe2f68d2452
+      internalID: -576108592
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Grass TileSheet_12
+      name: Slime Death-Sheet_2
       rect:
         serializedVersion: 2
-        x: 64
+        x: 230
         y: 0
-        width: 32
-        height: 32
+        width: 80
+        height: 43
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ee9eecb72334e0649a1c9c912a357775
-      internalID: -1633684101
+      spriteID: a17d6f8c7b29011449b9f6bdfcf03595
+      internalID: 1213073534
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Slime Death-Sheet_3
+      rect:
+        serializedVersion: 2
+        x: 341
+        y: 0
+        width: 110
+        height: 43
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2df6e1442840c0d4da373f7182b8707e
+      internalID: -850772023
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Slime Death-Sheet_4
+      rect:
+        serializedVersion: 2
+        x: 457
+        y: 0
+        width: 116
+        height: 43
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f99c38a202c5ac9458d07cfc5184f1f1
+      internalID: -558060289
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Slime Death-Sheet_5
+      rect:
+        serializedVersion: 2
+        x: 577
+        y: 0
+        width: 98
+        height: 43
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0511a099401f1d044a8fc0f07ccdff18
+      internalID: 1870010343
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Slime Death-Sheet_6
+      rect:
+        serializedVersion: 2
+        x: 690
+        y: 0
+        width: 103
+        height: 43
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c48122451c6770f48891fb53fce57d75
+      internalID: 108857330
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Slime Death-Sheet_7
+      rect:
+        serializedVersion: 2
+        x: 836
+        y: 0
+        width: 53
+        height: 43
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 797dd4adaa6c0114cba58bfdde63a320
+      internalID: -937097840
       vertices: []
       indices: 
       edges: []
@@ -400,19 +295,14 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Grass TileSheet_0: -775097178
-      Grass TileSheet_1: -782192208
-      Grass TileSheet_10: 262860638
-      Grass TileSheet_11: -515517799
-      Grass TileSheet_12: -1633684101
-      Grass TileSheet_2: -1448762208
-      Grass TileSheet_3: -1054851488
-      Grass TileSheet_4: -458676857
-      Grass TileSheet_5: 1088236537
-      Grass TileSheet_6: 1305229002
-      Grass TileSheet_7: 1210609598
-      Grass TileSheet_8: 417484656
-      Grass TileSheet_9: -112382719
+      Slime Death-Sheet_0: 269825138
+      Slime Death-Sheet_1: -576108592
+      Slime Death-Sheet_2: 1213073534
+      Slime Death-Sheet_3: -850772023
+      Slime Death-Sheet_4: -558060289
+      Slime Death-Sheet_5: 1870010343
+      Slime Death-Sheet_6: 108857330
+      Slime Death-Sheet_7: -937097840
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

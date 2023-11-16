@@ -19,7 +19,7 @@ public class PlayAttackSFX : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (playerDamage.isAttacking)
+        if (playerDamage.isAttacking && GetComponent<PlayerMovement>().isGrounded)
         {
             PlaySFX(attackSFX);
         }
