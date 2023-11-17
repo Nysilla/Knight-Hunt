@@ -8970,7 +8970,7 @@ GameObject:
   - component: {fileID: 1656325364}
   - component: {fileID: 1656325363}
   - component: {fileID: 1656325362}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Tilemap Grid
   m_TagString: Untagged
   m_Icon: {fileID: 0}
