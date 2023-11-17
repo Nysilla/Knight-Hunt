@@ -17,6 +17,7 @@ public class PlayerHealth : MonoBehaviour
     [SerializeField] private int startingPotions = 3;
     private AudioSource audioSource;
     private float healTimer;
+    private Animator animator;
 
     // Start is called before the first frame update
     void Start()
@@ -26,6 +27,7 @@ public class PlayerHealth : MonoBehaviour
         healPotionsText.text = $"= {healPotions}";
         audioSource = GetComponent<AudioSource>();
         healPotions = startingPotions;
+        animator = GetComponent<Animator>();
     }
 
     public void TakeDamage(int health)
@@ -33,19 +35,6 @@ public class PlayerHealth : MonoBehaviour
         if (this.health > 0)
         {
             this.health -= health;
-        }
-
-        if (this.health <= 0)
-        {
-            SetHealth(0);
-
-            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
-
-            /*alternative
-            gameObject.SetActive(false);
-            */
-
-            //PlayerDied();
         }
     }
 
@@ -86,8 +75,26 @@ public class PlayerHealth : MonoBehaviour
             healTimer = 0;
         }
 
+        if (health <= 0)
+        {
+            Die();
+            Invoke(nameof(ReloadScene), 2);
+        }
+
         healthText.text = $"Health: {health}";
         healPotionsText.text = $"= {healPotions}";
+    }
+
+    private void Die()
+    {
+        SetHealth(0);
+        animator.SetTrigger("Die");
+        GetComponent<PlayerMovement>().canMove = false;
+    }
+
+    private void ReloadScene()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 
     private void OnCollisionEnter2D(Collision2D collision)

@@ -9,7 +9,7 @@ public class PlayerMovement : MonoBehaviour
     [Header("Movement")]
     [SerializeField] float moveSpeed;
     [SerializeField] float moveMultiplier;
-    [SerializeField] bool canMove = true;
+    public bool canMove = true;
 
     [Header("Jumping")]
     [SerializeField] float jumpSpeed;
