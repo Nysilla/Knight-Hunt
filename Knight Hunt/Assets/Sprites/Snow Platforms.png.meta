@@ -47,7 +47,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 32
+  spritePixelsToUnits: 30
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -125,7 +125,7 @@ TextureImporter:
         width: 32
         height: 32
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -146,14 +146,14 @@ TextureImporter:
         width: 32
         height: 32
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f3c2a44bd55f2a149a4202d8a34fc3aa
-      internalID: 1139692809
+      spriteID: 40c6be26f9465d542ac18ff21b0f84b1
+      internalID: 1155987736
       vertices: []
       indices: 
       edges: []
@@ -162,19 +162,19 @@ TextureImporter:
       name: Snow Platforms_2
       rect:
         serializedVersion: 2
-        x: 64
+        x: 63
         y: 64
         width: 32
         height: 32
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 36f4b6f7b5aecd848b5814c89d5032f7
-      internalID: -738441635
+      spriteID: 6763f56c0a012e241ad6578cbe2937e1
+      internalID: -1023912624
       vertices: []
       indices: 
       edges: []
@@ -183,19 +183,19 @@ TextureImporter:
       name: Snow Platforms_3
       rect:
         serializedVersion: 2
-        x: 96
+        x: 95
         y: 64
         width: 32
         height: 32
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 894a577a0943c57438b878711cde6ea4
-      internalID: -1047328690
+      spriteID: 550d1519120d367428f1736c3af0185e
+      internalID: -1742796887
       vertices: []
       indices: 
       edges: []
@@ -204,19 +204,19 @@ TextureImporter:
       name: Snow Platforms_4
       rect:
         serializedVersion: 2
-        x: 128
+        x: 127
         y: 64
         width: 32
         height: 32
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b903ef813f6a77340b9ffc8da222f489
-      internalID: -674570826
+      spriteID: 462f3f679322af847af5d21641b71aa9
+      internalID: -1858558334
       vertices: []
       indices: 
       edges: []
@@ -225,19 +225,19 @@ TextureImporter:
       name: Snow Platforms_5
       rect:
         serializedVersion: 2
-        x: 160
+        x: 159
         y: 64
         width: 32
         height: 32
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: cd4e0a779cc66fc4a8bd3eb3c4645501
-      internalID: -1484735901
+      spriteID: 8c2f4e9a76ff9334082a295333431f1e
+      internalID: -777768044
       vertices: []
       indices: 
       edges: []
@@ -251,14 +251,14 @@ TextureImporter:
         width: 32
         height: 32
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: eabd6ad48495c6941bf2833c877497a5
-      internalID: 2112067507
+      spriteID: f6a4384a3947c1a46982909379ae393e
+      internalID: 751471289
       vertices: []
       indices: 
       edges: []
@@ -272,14 +272,14 @@ TextureImporter:
         width: 32
         height: 32
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 3e92eba1a1e244943a164f6d18f6fcba
-      internalID: 878854675
+      spriteID: 93b5cae073c878d4a84585eb9e796671
+      internalID: 1867795913
       vertices: []
       indices: 
       edges: []
@@ -288,19 +288,19 @@ TextureImporter:
       name: Snow Platforms_8
       rect:
         serializedVersion: 2
-        x: 64
+        x: 63
         y: 32
         width: 32
         height: 32
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 264ff20d85c322449a7fc74ca4f2f2d4
-      internalID: -1477148739
+      spriteID: 1e83390299040b043b4b47297dced271
+      internalID: 2109743420
       vertices: []
       indices: 
       edges: []
@@ -309,19 +309,19 @@ TextureImporter:
       name: Snow Platforms_9
       rect:
         serializedVersion: 2
-        x: 96
+        x: 95
         y: 32
         width: 32
         height: 32
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 8f1ba0ad76444394ca5fbf3066b08365
-      internalID: 1622512053
+      spriteID: 3fe6a75cfdbe73d47ab1ba4e9ddc54ce
+      internalID: -1836174630
       vertices: []
       indices: 
       edges: []
@@ -330,19 +330,19 @@ TextureImporter:
       name: Snow Platforms_10
       rect:
         serializedVersion: 2
-        x: 128
+        x: 127
         y: 32
         width: 32
         height: 32
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e4f7c3b04d1de6f46b7d821713faf8e9
-      internalID: -756948819
+      spriteID: 55146ca762a0133448ece50b0419dd89
+      internalID: 753017219
       vertices: []
       indices: 
       edges: []
@@ -351,19 +351,19 @@ TextureImporter:
       name: Snow Platforms_11
       rect:
         serializedVersion: 2
-        x: 160
+        x: 159
         y: 32
         width: 32
         height: 32
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b9a193910647ac04cbf706be0f5a920a
-      internalID: -1707781453
+      spriteID: b4434abc21170ac4ba859189edd4d6d9
+      internalID: -162187596
       vertices: []
       indices: 
       edges: []
@@ -377,14 +377,14 @@ TextureImporter:
         width: 32
         height: 32
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 691fae15674bd794c95426cf0f13bf2f
-      internalID: -2102018380
+      spriteID: b0b7d95e4d94b7a45ada0129451bdbc7
+      internalID: 232340390
       vertices: []
       indices: 
       edges: []
@@ -398,14 +398,14 @@ TextureImporter:
         width: 32
         height: 32
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d8bb032c97ff6f74c80f57b057ec6f57
-      internalID: 897328409
+      spriteID: 0fb0ec5b1204b7e43a8bb7a76319ebb5
+      internalID: 234979280
       vertices: []
       indices: 
       edges: []
@@ -414,40 +414,19 @@ TextureImporter:
       name: Snow Platforms_14
       rect:
         serializedVersion: 2
-        x: 64
+        x: 63
         y: 0
         width: 32
         height: 32
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 997b17de8385495448dbd311d512fdf0
-      internalID: -2099946140
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Snow Platforms_15
-      rect:
-        serializedVersion: 2
-        x: 128
-        y: 0
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 282df155e66322d4c8aaa0489ee3039e
-      internalID: -1421690335
+      spriteID: 4619ca43eaec58c4a85b9171ecf7332d
+      internalID: -1273196458
       vertices: []
       indices: 
       edges: []
@@ -456,19 +435,19 @@ TextureImporter:
       name: Snow Platforms_16
       rect:
         serializedVersion: 2
-        x: 160
+        x: 159
         y: 0
         width: 32
         height: 32
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 692c4979f9ef1df4081b1cbbb5582ce6
-      internalID: -1993529998
+      spriteID: f8430eb660b83494db719b0c35936e3a
+      internalID: 82020447
       vertices: []
       indices: 
       edges: []
@@ -485,22 +464,22 @@ TextureImporter:
     secondaryTextures: []
     nameFileIdTable:
       Snow Platforms_0: 256591877
-      Snow Platforms_1: 1139692809
-      Snow Platforms_10: -756948819
-      Snow Platforms_11: -1707781453
-      Snow Platforms_12: -2102018380
-      Snow Platforms_13: 897328409
-      Snow Platforms_14: -2099946140
-      Snow Platforms_15: -1421690335
-      Snow Platforms_16: -1993529998
-      Snow Platforms_2: -738441635
-      Snow Platforms_3: -1047328690
-      Snow Platforms_4: -674570826
-      Snow Platforms_5: -1484735901
-      Snow Platforms_6: 2112067507
-      Snow Platforms_7: 878854675
-      Snow Platforms_8: -1477148739
-      Snow Platforms_9: 1622512053
+      Snow Platforms_1: 1155987736
+      Snow Platforms_10: 753017219
+      Snow Platforms_11: -162187596
+      Snow Platforms_12: 232340390
+      Snow Platforms_13: 234979280
+      Snow Platforms_14: -1273196458
+      Snow Platforms_15: -1262899107
+      Snow Platforms_16: 82020447
+      Snow Platforms_2: -1023912624
+      Snow Platforms_3: -1742796887
+      Snow Platforms_4: -1858558334
+      Snow Platforms_5: -777768044
+      Snow Platforms_6: 751471289
+      Snow Platforms_7: 1867795913
+      Snow Platforms_8: 2109743420
+      Snow Platforms_9: -1836174630
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
